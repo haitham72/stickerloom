@@ -1,0 +1,10 @@
+One illustration of {n} separate characters arranged in {rows} rows of {cols}, evenly spaced across a single seamless background.
+Subject: {subject_description}.
+Style: {style}.
+Outline: none. Draw every character directly on the background with no outline, border, stroke, die-cut edge or halo around it.
+Reading left to right, top to bottom, each character shows a clearly different, highly expressive emotion and pose:
+{cells}
+Make every expression big and readable at small size: exaggerated eyes, eyebrows, mouth and body language.
+Consistency: the same character design, proportions and colours for all {n} characters.
+Background: a single, seamless, solid pure {key_name} ({key_hex}) background covering the whole image in exactly one shade, with no tiled panels, no shading variations, no tint, gradient, vignette or glow, no shadows, no floor, no noise.
+Spacing: every character is full body with a generous empty margin on every side (at least 20% of its own size), clearly separated from the others, none touching or crossing another.

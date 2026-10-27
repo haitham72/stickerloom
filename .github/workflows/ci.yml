@@ -1,0 +1,30 @@
+name: ci
+on:
+  push:
+  pull_request:
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.11", "3.12"]
+    env:
+      STICKERLOOM_PROVIDER: fake
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - run: pip install -e . pytest
+      - name: imports
+        run: python -c "import stickerloom.cli, stickerloom.console.server, stickerloom.api.app"
+      - name: verification docs are in sync
+        run: python scripts/gen_verify_docs.py && git diff --exit-code docs/verification.md
+      - name: offline quickstart
+        run: stickerloom create "a happy cactus" --auto
+      - name: core tests
+        run: >
+          python -m unittest tests.test_engine.SheetTests.test_engine_boundary
+          tests.test_gates tests.test_export_import tests.test_providers
+          tests.test_verify tests.test_verify_gaps

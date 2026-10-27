@@ -1,0 +1,12 @@
+stickerloom bundles the following third-party bits. Their own license files
+ship alongside them where the upstream provides one.
+
+1. Lottie web player (`stickerloom/console/ui/vendor/lottie-5.12.2.min.js`,
+   license text in `stickerloom/console/ui/vendor/lottie-LICENSE`):
+   MIT License, Copyright (c) 2015 Bodymovin.
+
+2. U2-Net weights (`stickerloom/models/u2netp.onnx`, the shipped matte-model
+   fallback; larger models download on demand): Apache License 2.0.
+
+3. Inter font (`stickerloom/console/ui/fonts/InterVariable.woff2`, the Studio
+   typeface with system fallbacks): SIL Open Font License 1.1.

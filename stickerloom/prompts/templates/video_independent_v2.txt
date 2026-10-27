@@ -1,0 +1,7 @@
+Animate this {rows}x{cols} grid of {units} perfectly in place as a {seconds}-second {clip}. Static camera, smooth fluid motion, no jitter.
+{expressive}
+All occupied cells animate concurrently from the first frame, each at its own pace. Each line describes one connected sequence for that cell alone, not a sequence of whole-sheet scenes. Blend its actions naturally with anticipation, follow-through and expressive transitions; keep every beat readable within the short clip. Never apply one cell's actions to the other cells or transition the entire grid between emotions.
+{local_sequences}
+Keep each {unit}'s identity, scale and position inside its original cell. Its expression may develop naturally through its own sequence. No interaction, copying, swapping or synchronized group choreography. Empty cells stay empty.
+Keep the flat {key_name} background and every {unit}'s design unchanged.{faces}
+{ending}

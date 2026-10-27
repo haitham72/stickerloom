@@ -1,0 +1,12 @@
+numpy>=1.26
+opencv-python-headless>=4.9
+pillow>=10
+imageio-ffmpeg>=0.5   # bundled ffmpeg fallback; a system ffmpeg on PATH is used first
+onnxruntime>=1.17   # optional: AI cutout for photos and video (see stickerloom/models/README.md); GrabCut is the fallback
+psycopg[binary]>=3.2   # Phase 3A: Postgres state (stickerloom-db on 5434); the engine never imports it
+redis>=5   # the disposable cache, locks and event streams (stickerloom/runtime/cache.py); without a server it falls back to memory
+langgraph>=1.0   # the chat agent's state graph (stickerloom/agent/graph.py); the engine never imports it
+langgraph-checkpoint-sqlite>=3.1   # SqliteSaver: durable turn checkpoints for the agent (stickerloom/agent/graph.py); file under out/, git-ignored
+FastAPI
+pydantic
+uvicorn

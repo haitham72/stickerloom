@@ -1,0 +1,26 @@
+# Optional local services. stickerloom works without them: files under STICKERLOOM_OUT are the primary state.
+#   Postgres (pgvector): a searchable mirror of the files. Redis: a disposable cache and locks (it falls back to memory).
+# Host ports are 5434 and 6380 so they never collide with a Postgres or Redis you already run.
+# Dev-only password default; override with STICKERLOOM_PG_PASSWORD (never commit a real one).
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: stickerloom-db
+    environment:
+      POSTGRES_USER: stickerloom
+      POSTGRES_PASSWORD: ${STICKERLOOM_PG_PASSWORD:-stickerloom_local}
+      POSTGRES_DB: stickerloom
+    ports:
+      - "5434:5432"
+    volumes:
+      - stickerloom_pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+    container_name: stickerloom-redis
+    command: ["redis-server", "--appendonly", "no", "--maxmemory", "256mb", "--maxmemory-policy", "allkeys-lru"]
+    ports:
+      - "6380:6379"
+
+volumes:
+  stickerloom_pgdata:

@@ -1,0 +1,2415 @@
+{
+  "generation_id": "G001",
+  "number": 1,
+  "owner": "local",
+  "created": 1793024413.627,
+  "parent": null,
+  "prompt": "a cheerful round cartoon mushroom, flat vector style, four happy moods",
+  "task": "a cheerful round cartoon mushroom flat vector style four happy moods",
+  "task_slug": "cheerful_round_cartoon_mushroom_flat_vector_style_four_moods",
+  "source": {
+    "subject": "cheerful_round_cartoon_mushroom_flat_vector_style_four_moods",
+    "subject_id": "001",
+    "variant": 1,
+    "n_variants": 1,
+    "sheet": "result.png",
+    "video": null,
+    "has_video": false,
+    "pairing": "folder",
+    "clips_dup_of": null,
+    "prepared": false,
+    "clips": {},
+    "sheet_path": "<OUT>\\jobs\\J001-cheerful_round_cartoon_mushr-sheet\\result.png",
+    "video_path": null,
+    "sheet_copy": "source/sheet.png",
+    "sheet_size": [
+      1024,
+      1024
+    ],
+    "grid": {
+      "rows": 2,
+      "cols": 2,
+      "rects": [
+        [
+          0,
+          0,
+          517,
+          517
+        ],
+        [
+          517,
+          0,
+          507,
+          517
+        ],
+        [
+          0,
+          517,
+          517,
+          507
+        ],
+        [
+          517,
+          517,
+          507,
+          507
+        ]
+      ],
+      "xs": [
+        0,
+        517,
+        1024
+      ],
+      "ys": [
+        0,
+        517,
+        1024
+      ],
+      "method": "gutter"
+    },
+    "keyed": "source/keyed.png"
+  },
+  "grid": [
+    2,
+    2
+  ],
+  "stage": "video_sliced",
+  "error": null,
+  "plan_source": "task 001",
+  "sheet_prompt": "One illustration of 4 separate characters arranged in 2 rows of 2, evenly spaced across a single seamless background.\nSubject: cheerful round cartoon mushroom flat vector style four happy moods.\nStyle: flat vector illustration, bold clean shapes, solid vibrant colours, friendly proportions.\nOutline: none. Draw every character directly on the background with no outline, border, stroke, die-cut edge or halo around it.\nReading left to right, top to bottom, every character is a different moment: a wide range of emotions AND different states of action (standing, walking, running, jumping, sitting, lying down, leaning, reaching, spinning), so no two characters share a pose, a body position or a silhouette:\nCharacter 1: laughing so hard tears of joy fly out, mouth wide open\nCharacter 2: bawling with big streaming tears and a trembling lip\nCharacter 3: facepalming in disbelief, eyes closed, sighing\nCharacter 4: terrified, trembling, peeking through hands, wide eyes\nMake every expression big and readable at small size: exaggerated eyes, eyebrows, mouth and body language.\nConsistency: the same character design, proportions and colours for all 4 characters.\nBackground: a single, seamless, solid pure green (#00FF00) background covering the whole image in exactly one shade, with no tiled panels, no shading variations, no tint, gradient, vignette or glow, no shadows, no floor, no noise.\nSpacing: every character is full body with a generous empty margin on every side (at least 20% of its own size), clearly separated from the others, none touching or crossing another.",
+  "video_prompt": "Animate this 2x2 grid of characters perfectly in place as a 3-second clip. Static camera, smooth fluid motion, no jitter.\nCreate a very expressive animation of each character, each having its own personality with a wide range of emotions.\nAll occupied cells animate concurrently from the first frame, each at its own pace. Each line describes one connected sequence for that cell alone, not a sequence of whole-sheet scenes. Blend its actions naturally with anticipation, follow-through and expressive transitions; keep every beat readable within the short clip. Never apply one cell's actions to the other cells or transition the entire grid between emotions.\nTop-left (cell 1): The laughing so hard tears of joy fly out, mouth wide open doubles over, then shoulders shaking, and finally tiny hops, and wipes a tear.\nTop-right (cell 2): The bawling with big streaming tears and a trembling lip sobs with heaving shoulders, then tears stream in two arcs.\nBottom-left (cell 3): Facepalming in disbelief, eyes closed, sighing. Slowly drops the face into the palm, then shakes the head.\nBottom-right (cell 4): The terrified, trembling, peeking through hands, wide eyes shivers fast, then knees knock, and finally cowers lower.\nKeep each character's identity, scale and position inside its original cell. Its expression may develop naturally through its own sequence. No interaction, copying, swapping or synchronized group choreography. Empty cells stay empty.\nKeep the flat green background and every character's design unchanged.",
+  "custom_prompts": [],
+  "template_id": "sheet_2x2",
+  "template_version": 3,
+  "slots": {
+    "subject_description": "cheerful round cartoon mushroom flat vector style four happy moods",
+    "style_id": "flat_vector",
+    "mode": "sheet_2x2",
+    "cells": [
+      {
+        "pos": 1,
+        "label": "laughing so hard tears of joy fly out, mouth wide open",
+        "tags": [
+          "cheerful_round_cartoon_mushroom_flat_vector_style_four_moods_laughing",
+          "laughing",
+          "hard",
+          "tears"
+        ],
+        "emoji": "😂",
+        "motion": "doubles over, shoulders shaking, tiny hops, wipes a tear"
+      },
+      {
+        "pos": 2,
+        "label": "bawling with big streaming tears and a trembling lip",
+        "tags": [
+          "cheerful_round_cartoon_mushroom_flat_vector_style_four_moods_crying",
+          "bawling",
+          "big",
+          "streaming"
+        ],
+        "emoji": "😭",
+        "motion": "sobs with heaving shoulders, tears stream in two arcs"
+      },
+      {
+        "pos": 3,
+        "label": "facepalming in disbelief, eyes closed, sighing",
+        "tags": [
+          "cheerful_round_cartoon_mushroom_flat_vector_style_four_moods_facepalm",
+          "facepalming",
+          "disbelief",
+          "eyes"
+        ],
+        "emoji": "🤦",
+        "motion": "slowly drops the face into the palm, shakes the head"
+      },
+      {
+        "pos": 4,
+        "label": "terrified, trembling, peeking through hands, wide eyes",
+        "tags": [
+          "cheerful_round_cartoon_mushroom_flat_vector_style_four_moods_scared",
+          "terrified",
+          "trembling",
+          "peeking"
+        ],
+        "emoji": "😨",
+        "motion": "shivers fast, knees knock, cowers lower"
+      }
+    ],
+    "action_guidance": "default",
+    "key_colour": "green",
+    "face": false,
+    "preset": null,
+    "video_template": {
+      "id": "video_independent",
+      "version": 2
+    },
+    "loop": false
+  },
+  "task_id": "001",
+  "name_key": "cheerful_round_cartoon_mushroom_flat_vector_style_four_moods",
+  "regen_of": null,
+  "sheet_model": "fake_sheet",
+  "verify_version": 2,
+  "outline_px": 0,
+  "erode_px": 0,
+  "reviews": {
+    "plan": {
+      "decision": "APPROVE",
+      "by": "human",
+      "ts": 1793024413.556,
+      "note": "approved when the task was reserved"
+    },
+    "video_sheet": {
+      "A1": {
+        "decision": "APPROVE",
+        "by": "human",
+        "ts": 1793024428.278,
+        "note": "approved by Make a video"
+      }
+    },
+    "pack": null
+  },
+  "video_sheets": [
+    {
+      "id": "A1",
+      "slots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "file": "video_sheet/A1/sheet.png",
+      "layout": "video_sheet/A1/layout.json",
+      "video": "video_sheet/A1/video.mp4",
+      "status": "SLICED",
+      "ts": 1793024427.135,
+      "verify": [
+        {
+          "name": "slots_match_approved",
+          "ok": true,
+          "detail": "filled slots are exactly the approved stickers; blank slots are pure key colour",
+          "severity": "BLOCK",
+          "stage": "video_sheet",
+          "value": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "limit": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "data": {
+            "problems": [],
+            "ms": 72.8
+          }
+        },
+        {
+          "name": "no_outline_on_sheet",
+          "ok": true,
+          "detail": "no white ring around the subjects",
+          "severity": "BLOCK",
+          "stage": "video_sheet",
+          "value": [],
+          "limit": [],
+          "data": {
+            "slots": [],
+            "ms": 249.7
+          }
+        }
+      ],
+      "blocked": null,
+      "canvas": [
+        2048,
+        2048
+      ],
+      "video_prompt": "Animate this 2x2 grid of characters perfectly in place as a 3-second clip. Static camera, smooth fluid motion, no jitter.\nCreate a very expressive animation of each character, each having its own personality with a wide range of emotions.\nAll occupied cells animate concurrently from the first frame, each at its own pace. Each line describes one connected sequence for that cell alone, not a sequence of whole-sheet scenes. Blend its actions naturally with anticipation, follow-through and expressive transitions; keep every beat readable within the short clip. Never apply one cell's actions to the other cells or transition the entire grid between emotions.\nTop-left (cell 1): The laughing so hard tears of joy fly out, mouth wide open doubles over, then shoulders shaking, and finally tiny hops, and wipes a tear.\nTop-right (cell 2): The bawling with big streaming tears and a trembling lip sobs with heaving shoulders, then tears stream in two arcs.\nBottom-left (cell 3): Facepalming in disbelief, eyes closed, sighing. Slowly drops the face into the palm, then shakes the head.\nBottom-right (cell 4): The terrified, trembling, peeking through hands, wide eyes shivers fast, then knees knock, and finally cowers lower.\nKeep each character's identity, scale and position inside its original cell. Its expression may develop naturally through its own sequence. No interaction, copying, swapping or synchronized group choreography. Empty cells stay empty.\nKeep the flat green background and every character's design unchanged.",
+      "slot_fill": 0.74,
+      "video_name": "J002.mp4",
+      "block": null,
+      "video_flags": [],
+      "video_checks": [
+        {
+          "name": "video_decodes",
+          "ok": true,
+          "detail": "mpeg4 2048x2048",
+          "severity": "BLOCK",
+          "stage": "video",
+          "value": "mpeg4",
+          "limit": null,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "video_specs",
+          "ok": true,
+          "detail": "2048x2048 24.0 fps, 3.00s",
+          "severity": "BLOCK",
+          "stage": "video",
+          "value": 3.0,
+          "limit": 1.0,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "layout_match",
+          "ok": true,
+          "detail": "lowest slot IoU 0.94",
+          "severity": "BLOCK",
+          "stage": "video",
+          "value": 0.937,
+          "limit": 0.6,
+          "data": {
+            "ious": {
+              "1": 0.937,
+              "2": 0.974,
+              "3": 0.943,
+              "4": 0.963
+            },
+            "bad": [],
+            "ms": 134.4
+          }
+        },
+        {
+          "name": "blank_slots_stay_empty",
+          "ok": true,
+          "detail": "blank slots stayed empty",
+          "severity": "BLOCK",
+          "stage": "video",
+          "value": 0.0,
+          "limit": 0.002,
+          "data": {
+            "bad": {},
+            "ms": 0.0
+          }
+        }
+      ],
+      "preview": "video_sheet/A1/preview.mp4",
+      "video_prompt_sent": "gentle looping motion for each of the four mushroom stickers",
+      "video_prompt_custom": false,
+      "model": "fake_video",
+      "video_info": {
+        "codec": "mpeg4",
+        "width": 2048,
+        "height": 2048,
+        "fps": 24.0,
+        "duration": 3.0
+      }
+    }
+  ],
+  "verify": {
+    "sheet": [
+      {
+        "name": "sheet_decodes",
+        "ok": true,
+        "detail": "1024x1024",
+        "severity": "BLOCK",
+        "stage": "sheet",
+        "value": "1024x1024",
+        "limit": "RGB/RGBA image",
+        "data": {
+          "ms": 3.6
+        }
+      },
+      {
+        "name": "sheet_size",
+        "ok": true,
+        "detail": "shortest side 1024px",
+        "severity": "BLOCK",
+        "stage": "sheet",
+        "value": 1024,
+        "limit": 1024,
+        "data": {
+          "ms": 0.0
+        }
+      },
+      {
+        "name": "background_is_key",
+        "ok": true,
+        "detail": "outer ring is 255 green-ward; a sheet without a green screen cannot be chroma keyed (matte keyer, Phase 3C)",
+        "severity": "BLOCK",
+        "stage": "sheet",
+        "value": 255.0,
+        "limit": 60.0,
+        "data": {
+          "ms": 2.8
+        }
+      },
+      {
+        "name": "grid_detected",
+        "ok": true,
+        "detail": "found 2x2, plan says 2x2",
+        "severity": "BLOCK",
+        "stage": "sheet",
+        "value": "2x2",
+        "limit": "2x2",
+        "data": {
+          "ms": 8.8
+        }
+      },
+      {
+        "name": "cut_clean",
+        "ok": true,
+        "detail": "cut method: gutter",
+        "severity": "WARN",
+        "stage": "sheet",
+        "value": "gutter",
+        "limit": "gutter",
+        "data": {
+          "xs": [
+            0,
+            517,
+            1024
+          ],
+          "ys": [
+            0,
+            517,
+            1024
+          ],
+          "ms": 8.4
+        }
+      },
+      {
+        "name": "background_flat",
+        "ok": true,
+        "detail": "key-channel std-dev 0.1 over the gutters",
+        "severity": "WARN",
+        "stage": "sheet",
+        "value": 0.06,
+        "limit": 12.0,
+        "data": {
+          "ms": 21.0
+        }
+      }
+    ]
+  },
+  "stickers": [
+    {
+      "index": 1,
+      "key": "cheerful_round_cartoon_mushroom_flat_vector_style_four_moods_laughing",
+      "tags": [
+        "cheerful_round_cartoon_mushroom_flat_vector_style_four_moods_laughing",
+        "laughing",
+        "hard",
+        "tears"
+      ],
+      "emoji": "😂",
+      "prompt": "cheerful round cartoon mushroom flat vector style four happy moods laughing so hard tears of joy fly out, mouth wide open, full body, centred, generous empty margin on every side (at least 20% of the cell), nothing touching or crossing the cell edge",
+      "name": "img-cheerful_round_cartoon_mushr-laughing-20261026T142013-e52b96",
+      "status": "READY",
+      "reason": null,
+      "report": [
+        {
+          "name": "blank_cell",
+          "ok": true,
+          "detail": "foreground below minimum",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": 15791,
+          "limit": 400,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "dimensions",
+          "ok": true,
+          "detail": "(512, 512, 4)",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": [
+            512,
+            512,
+            4
+          ],
+          "limit": [
+            512,
+            512,
+            4
+          ],
+          "data": {
+            "ms": 12.8
+          }
+        },
+        {
+          "name": "transparent_corners",
+          "ok": true,
+          "detail": "",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": null,
+          "limit": null,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "foreground",
+          "ok": true,
+          "detail": "",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": 64428,
+          "limit": 400,
+          "data": {
+            "ms": 0.2
+          }
+        },
+        {
+          "name": "inside_cell",
+          "ok": true,
+          "detail": "0px on cell border",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": 0,
+          "limit": 8,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "no_spill",
+          "ok": true,
+          "detail": "0px on the edge band",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": 0,
+          "limit": 64.428,
+          "data": {
+            "ms": 2.1
+          }
+        },
+        {
+          "name": "chroma_risk",
+          "ok": true,
+          "detail": "0.0% of the subject is key-coloured",
+          "severity": "WARN",
+          "stage": "still",
+          "value": 0.0,
+          "limit": 0.03,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "holes",
+          "ok": true,
+          "detail": "0 enclosed hole(s), 0.0% of the subject",
+          "severity": "WARN",
+          "stage": "still",
+          "value": 0.0,
+          "limit": 0.01,
+          "data": {
+            "count": 0,
+            "ms": 0.3
+          }
+        },
+        {
+          "name": "single_subject",
+          "ok": true,
+          "detail": "1 part(s); the second is 0.0% of the subject",
+          "severity": "WARN",
+          "stage": "still",
+          "value": 0.0,
+          "limit": 0.12,
+          "data": {
+            "parts": 1,
+            "ms": 1.0
+          }
+        },
+        {
+          "name": "duplicate_cell",
+          "ok": true,
+          "detail": "no earlier cell",
+          "severity": "WARN",
+          "stage": "still",
+          "value": 64,
+          "limit": 4,
+          "data": {
+            "of": null,
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "static_file",
+          "ok": true,
+          "detail": "22.7KB png",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": 22.7,
+          "limit": 512,
+          "data": {
+            "ms": 1.4
+          }
+        }
+      ],
+      "metrics": {
+        "cell": [
+          0,
+          0,
+          517,
+          517
+        ],
+        "bg": [
+          0,
+          255,
+          0
+        ],
+        "threshold": 127.5,
+        "fg_px": 15791,
+        "bbox": [
+          163,
+          163,
+          350,
+          330
+        ],
+        "scale": 2.0194,
+        "scale_mode": "pack",
+        "spill_px": 0,
+        "chroma_risk": 0.0,
+        "holes": 0.0,
+        "kb": 22.7,
+        "format": "png"
+      },
+      "png": "slices/img-cheerful_round_cartoon_mushr-laughing-20261026T142013-e52b96.png",
+      "anim_status": "READY",
+      "anim_reason": null,
+      "anim_metrics": {
+        "source": "video sheet",
+        "threshold": 127.5,
+        "ms": {
+          "decode": 1846,
+          "key": 3071,
+          "bounds": 799,
+          "render": 4395,
+          "seam": 274,
+          "encode": 4692,
+          "encodes": 4,
+          "probe": 191,
+          "verify": 17,
+          "finish": 10476
+        },
+        "frames": 72,
+        "fps": 24.0,
+        "bbox": [
+          159,
+          196,
+          864,
+          828
+        ],
+        "edge_touch_frames": 0,
+        "subject_px_in_video": 705,
+        "cell_wh": [
+          1024,
+          1024
+        ],
+        "first_bbox": [
+          169,
+          216,
+          854,
+          828
+        ],
+        "core_bbox": [
+          173,
+          214,
+          850,
+          817
+        ],
+        "core_centre": [
+          511.0,
+          611.8
+        ],
+        "core_share": 0.2017,
+        "scale": 0.5518,
+        "size_mode": "kept",
+        "core_canvas": [
+          69.2,
+          85.5,
+          442.8,
+          418.3
+        ],
+        "motion": 6.27,
+        "loop_seam_before": 6.38,
+        "loop_seam": 6.38,
+        "loop_limit": 12.0,
+        "frames_out": 72,
+        "cut_off_frames": 0,
+        "crf": 30,
+        "sharp_kept": 1.0,
+        "detail_vs_still": 0.96,
+        "soft_sigma": 0.4,
+        "kb": 126.1
+      },
+      "webm": "slices/vid-cheerful_round_cartoon_mushr-laughing-20261026T142013-e52b96.webm",
+      "review": {
+        "still": "APPROVED",
+        "anim": "PENDING"
+      },
+      "history": [
+        {
+          "ts": 1793024415.026,
+          "stage": "sliced",
+          "actor": "python",
+          "decision": "PASS",
+          "reason": null,
+          "ref": null,
+          "detail": {
+            "warnings": []
+          }
+        },
+        {
+          "ts": 1793024415.078,
+          "stage": "still",
+          "actor": "human",
+          "decision": "APPROVE",
+          "reason": "agentic creator: the person's standing approval",
+          "ref": null,
+          "detail": null
+        },
+        {
+          "ts": 1793024427.135,
+          "stage": "video_sheet",
+          "actor": "python",
+          "decision": "PASS",
+          "reason": null,
+          "ref": "A1",
+          "detail": null
+        },
+        {
+          "ts": 1793024428.278,
+          "stage": "video_sheet",
+          "actor": "human",
+          "decision": "APPROVE",
+          "reason": "approved by Make a video",
+          "ref": "A1",
+          "detail": null
+        },
+        {
+          "ts": 1793024445.471,
+          "stage": "video",
+          "actor": "python",
+          "decision": "PASS",
+          "reason": null,
+          "ref": "A1",
+          "detail": {
+            "warnings": []
+          }
+        }
+      ],
+      "anim_report": [
+        {
+          "name": "inside_slot",
+          "ok": true,
+          "detail": "inside",
+          "severity": "BLOCK",
+          "stage": "slot",
+          "value": 0,
+          "limit": 0,
+          "data": {
+            "frame": null,
+            "over_px": 0,
+            "edge_px": 15,
+            "ms": 241.4
+          }
+        },
+        {
+          "name": "cross_slot",
+          "ok": true,
+          "detail": "gutter clean",
+          "severity": "BLOCK",
+          "stage": "slot",
+          "value": 0,
+          "limit": 0,
+          "data": {
+            "frame": null,
+            "px": 0,
+            "ms": 305.6
+          }
+        },
+        {
+          "name": "size_budget",
+          "ok": true,
+          "detail": "126KB @crf30",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": 126,
+          "limit": 256,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "codec_vp9",
+          "ok": true,
+          "detail": "vp9",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": "vp9",
+          "limit": "vp9",
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "dimensions",
+          "ok": true,
+          "detail": "512x512",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": "512x512",
+          "limit": "512x512",
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "fps",
+          "ok": true,
+          "detail": "24.0",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": 24.0,
+          "limit": 30.0,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "duration",
+          "ok": true,
+          "detail": "3.0",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": 3.0,
+          "limit": 3.0,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "no_audio",
+          "ok": true,
+          "detail": "",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": null,
+          "limit": null,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "alpha_mode_tag",
+          "ok": true,
+          "detail": "",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": null,
+          "limit": null,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "alpha_decoded",
+          "ok": true,
+          "detail": "",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": null,
+          "limit": null,
+          "data": {
+            "ms": 0.7
+          }
+        },
+        {
+          "name": "loop_seam",
+          "ok": true,
+          "detail": "6.38 <= 12.0",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": 6.38,
+          "limit": 12.0,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "identity_kept",
+          "ok": true,
+          "detail": "first frame matches the still at IoU 1.00",
+          "severity": "WARN",
+          "stage": "anim",
+          "value": 0.996,
+          "limit": 0.5,
+          "data": {
+            "ms": 1.8
+          }
+        },
+        {
+          "name": "motion_present",
+          "ok": true,
+          "detail": "median frame-to-frame change 6.27",
+          "severity": "WARN",
+          "stage": "anim",
+          "value": 6.27,
+          "limit": 0.5,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "alpha_stable",
+          "ok": true,
+          "detail": "subject area varies by 0% over the frames",
+          "severity": "WARN",
+          "stage": "anim",
+          "value": 0.002,
+          "limit": 0.35,
+          "data": {
+            "ms": 14.7
+          }
+        },
+        {
+          "name": "sharpness",
+          "ok": true,
+          "detail": "0.96x of the still's edge detail (as soft as the still blurred 0.4 px)",
+          "severity": "WARN",
+          "stage": "anim",
+          "value": 0.96,
+          "limit": 0.75,
+          "data": {
+            "ms": 0.0
+          }
+        }
+      ],
+      "anim_at": 1793024445.471
+    },
+    {
+      "index": 2,
+      "key": "cheerful_round_cartoon_mushroom_flat_vector_style_four_moods_crying",
+      "tags": [
+        "cheerful_round_cartoon_mushroom_flat_vector_style_four_moods_crying",
+        "bawling",
+        "big",
+        "streaming"
+      ],
+      "emoji": "😭",
+      "prompt": "cheerful round cartoon mushroom flat vector style four happy moods bawling with big streaming tears and a trembling lip, full body, centred, generous empty margin on every side (at least 20% of the cell), nothing touching or crossing the cell edge",
+      "name": "img-cheerful_round_cartoon_mushr-crying-20261026T142013-1eddd8",
+      "status": "READY",
+      "reason": null,
+      "report": [
+        {
+          "name": "blank_cell",
+          "ok": true,
+          "detail": "foreground below minimum",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": 19251,
+          "limit": 400,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "dimensions",
+          "ok": true,
+          "detail": "(512, 512, 4)",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": [
+            512,
+            512,
+            4
+          ],
+          "limit": [
+            512,
+            512,
+            4
+          ],
+          "data": {
+            "ms": 10.1
+          }
+        },
+        {
+          "name": "transparent_corners",
+          "ok": true,
+          "detail": "",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": null,
+          "limit": null,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "foreground",
+          "ok": true,
+          "detail": "",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": 78584,
+          "limit": 400,
+          "data": {
+            "ms": 0.3
+          }
+        },
+        {
+          "name": "inside_cell",
+          "ok": true,
+          "detail": "0px on cell border",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": 0,
+          "limit": 8,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "no_spill",
+          "ok": true,
+          "detail": "0px on the edge band",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": 0,
+          "limit": 78.584,
+          "data": {
+            "ms": 2.2
+          }
+        },
+        {
+          "name": "chroma_risk",
+          "ok": true,
+          "detail": "0.0% of the subject is key-coloured",
+          "severity": "WARN",
+          "stage": "still",
+          "value": 0.0,
+          "limit": 0.03,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "holes",
+          "ok": true,
+          "detail": "0 enclosed hole(s), 0.0% of the subject",
+          "severity": "WARN",
+          "stage": "still",
+          "value": 0.0,
+          "limit": 0.01,
+          "data": {
+            "count": 0,
+            "ms": 0.5
+          }
+        },
+        {
+          "name": "single_subject",
+          "ok": true,
+          "detail": "1 part(s); the second is 0.0% of the subject",
+          "severity": "WARN",
+          "stage": "still",
+          "value": 0.0,
+          "limit": 0.12,
+          "data": {
+            "parts": 1,
+            "ms": 1.1
+          }
+        },
+        {
+          "name": "duplicate_cell",
+          "ok": true,
+          "detail": "hash distance 25 to cell 1",
+          "severity": "WARN",
+          "stage": "still",
+          "value": 25,
+          "limit": 4,
+          "data": {
+            "of": 1,
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "static_file",
+          "ok": true,
+          "detail": "5.2KB png",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": 5.2,
+          "limit": 512,
+          "data": {
+            "ms": 1.1
+          }
+        }
+      ],
+      "metrics": {
+        "cell": [
+          517,
+          0,
+          507,
+          517
+        ],
+        "bg": [
+          0,
+          255,
+          0
+        ],
+        "threshold": 127.5,
+        "fg_px": 19251,
+        "bbox": [
+          205,
+          153,
+          298,
+          360
+        ],
+        "scale": 2.0194,
+        "scale_mode": "pack",
+        "spill_px": 0,
+        "chroma_risk": 0.0,
+        "holes": 0.0,
+        "kb": 5.2,
+        "format": "png"
+      },
+      "png": "slices/img-cheerful_round_cartoon_mushr-crying-20261026T142013-1eddd8.png",
+      "anim_status": "READY",
+      "anim_reason": null,
+      "anim_metrics": {
+        "source": "video sheet",
+        "threshold": 127.5,
+        "ms": {
+          "decode": 1839,
+          "key": 3113,
+          "bounds": 861,
+          "render": 4362,
+          "seam": 191,
+          "encode": 4306,
+          "encodes": 4,
+          "probe": 252,
+          "verify": 17,
+          "finish": 10100
+        },
+        "frames": 72,
+        "fps": 24.0,
+        "bbox": [
+          330,
+          122,
+          692,
+          902
+        ],
+        "edge_touch_frames": 0,
+        "subject_px_in_video": 780,
+        "cell_wh": [
+          1024,
+          1024
+        ],
+        "first_bbox": [
+          340,
+          142,
+          682,
+          902
+        ],
+        "core_bbox": [
+          341,
+          132,
+          682,
+          892
+        ],
+        "core_centre": [
+          511.0,
+          511.5
+        ],
+        "core_share": 0.2462,
+        "scale": 0.55,
+        "size_mode": "kept",
+        "core_canvas": [
+          162.5,
+          41.5,
+          350.1,
+          459.5
+        ],
+        "motion": 4.98,
+        "loop_seam_before": 5.68,
+        "loop_seam": 5.68,
+        "loop_limit": 12.0,
+        "frames_out": 72,
+        "cut_off_frames": 0,
+        "crf": 30,
+        "sharp_kept": 0.98,
+        "detail_vs_still": 0.79,
+        "soft_sigma": 4.0,
+        "kb": 40.7
+      },
+      "webm": "slices/vid-cheerful_round_cartoon_mushr-crying-20261026T142013-1eddd8.webm",
+      "review": {
+        "still": "APPROVED",
+        "anim": "PENDING"
+      },
+      "history": [
+        {
+          "ts": 1793024415.031,
+          "stage": "sliced",
+          "actor": "python",
+          "decision": "PASS",
+          "reason": null,
+          "ref": null,
+          "detail": {
+            "warnings": []
+          }
+        },
+        {
+          "ts": 1793024415.086,
+          "stage": "still",
+          "actor": "human",
+          "decision": "APPROVE",
+          "reason": "agentic creator: the person's standing approval",
+          "ref": null,
+          "detail": null
+        },
+        {
+          "ts": 1793024427.135,
+          "stage": "video_sheet",
+          "actor": "python",
+          "decision": "PASS",
+          "reason": null,
+          "ref": "A1",
+          "detail": null
+        },
+        {
+          "ts": 1793024428.278,
+          "stage": "video_sheet",
+          "actor": "human",
+          "decision": "APPROVE",
+          "reason": "approved by Make a video",
+          "ref": "A1",
+          "detail": null
+        },
+        {
+          "ts": 1793024445.131,
+          "stage": "video",
+          "actor": "python",
+          "decision": "PASS",
+          "reason": null,
+          "ref": "A1",
+          "detail": {
+            "warnings": []
+          }
+        }
+      ],
+      "anim_report": [
+        {
+          "name": "inside_slot",
+          "ok": true,
+          "detail": "inside",
+          "severity": "BLOCK",
+          "stage": "slot",
+          "value": 0,
+          "limit": 0,
+          "data": {
+            "frame": null,
+            "over_px": 0,
+            "edge_px": 15,
+            "ms": 269.1
+          }
+        },
+        {
+          "name": "cross_slot",
+          "ok": true,
+          "detail": "gutter clean",
+          "severity": "BLOCK",
+          "stage": "slot",
+          "value": 0,
+          "limit": 0,
+          "data": {
+            "frame": null,
+            "px": 0,
+            "ms": 322.4
+          }
+        },
+        {
+          "name": "size_budget",
+          "ok": true,
+          "detail": "40KB @crf30",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": 40,
+          "limit": 256,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "codec_vp9",
+          "ok": true,
+          "detail": "vp9",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": "vp9",
+          "limit": "vp9",
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "dimensions",
+          "ok": true,
+          "detail": "512x512",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": "512x512",
+          "limit": "512x512",
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "fps",
+          "ok": true,
+          "detail": "24.0",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": 24.0,
+          "limit": 30.0,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "duration",
+          "ok": true,
+          "detail": "3.0",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": 3.0,
+          "limit": 3.0,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "no_audio",
+          "ok": true,
+          "detail": "",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": null,
+          "limit": null,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "alpha_mode_tag",
+          "ok": true,
+          "detail": "",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": null,
+          "limit": null,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "alpha_decoded",
+          "ok": true,
+          "detail": "",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": null,
+          "limit": null,
+          "data": {
+            "ms": 1.0
+          }
+        },
+        {
+          "name": "loop_seam",
+          "ok": true,
+          "detail": "5.68 <= 12.0",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": 5.68,
+          "limit": 12.0,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "identity_kept",
+          "ok": true,
+          "detail": "first frame matches the still at IoU 1.00",
+          "severity": "WARN",
+          "stage": "anim",
+          "value": 1.0,
+          "limit": 0.5,
+          "data": {
+            "ms": 1.7
+          }
+        },
+        {
+          "name": "motion_present",
+          "ok": true,
+          "detail": "median frame-to-frame change 4.98",
+          "severity": "WARN",
+          "stage": "anim",
+          "value": 4.98,
+          "limit": 0.5,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "alpha_stable",
+          "ok": true,
+          "detail": "subject area varies by 0% over the frames",
+          "severity": "WARN",
+          "stage": "anim",
+          "value": 0.002,
+          "limit": 0.35,
+          "data": {
+            "ms": 14.8
+          }
+        },
+        {
+          "name": "sharpness",
+          "ok": true,
+          "detail": "0.79x of the still's edge detail (as soft as the still blurred 4.0 px)",
+          "severity": "WARN",
+          "stage": "anim",
+          "value": 0.79,
+          "limit": 0.75,
+          "data": {
+            "ms": 0.0
+          }
+        }
+      ],
+      "anim_at": 1793024445.131
+    },
+    {
+      "index": 3,
+      "key": "cheerful_round_cartoon_mushroom_flat_vector_style_four_moods_facepalm",
+      "tags": [
+        "cheerful_round_cartoon_mushroom_flat_vector_style_four_moods_facepalm",
+        "facepalming",
+        "disbelief",
+        "eyes"
+      ],
+      "emoji": "🤦",
+      "prompt": "cheerful round cartoon mushroom flat vector style four happy moods facepalming in disbelief, eyes closed, sighing, full body, centred, generous empty margin on every side (at least 20% of the cell), nothing touching or crossing the cell edge",
+      "name": "img-cheerful_round_cartoon_mushr-facepalm-20261026T142013-9edec5",
+      "status": "READY",
+      "reason": null,
+      "report": [
+        {
+          "name": "blank_cell",
+          "ok": true,
+          "detail": "foreground below minimum",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": 19251,
+          "limit": 400,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "dimensions",
+          "ok": true,
+          "detail": "(512, 512, 4)",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": [
+            512,
+            512,
+            4
+          ],
+          "limit": [
+            512,
+            512,
+            4
+          ],
+          "data": {
+            "ms": 9.4
+          }
+        },
+        {
+          "name": "transparent_corners",
+          "ok": true,
+          "detail": "",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": null,
+          "limit": null,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "foreground",
+          "ok": true,
+          "detail": "",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": 78584,
+          "limit": 400,
+          "data": {
+            "ms": 0.4
+          }
+        },
+        {
+          "name": "inside_cell",
+          "ok": true,
+          "detail": "0px on cell border",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": 0,
+          "limit": 8,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "no_spill",
+          "ok": true,
+          "detail": "0px on the edge band",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": 0,
+          "limit": 78.584,
+          "data": {
+            "ms": 2.9
+          }
+        },
+        {
+          "name": "chroma_risk",
+          "ok": true,
+          "detail": "0.0% of the subject is key-coloured",
+          "severity": "WARN",
+          "stage": "still",
+          "value": 0.0,
+          "limit": 0.03,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "holes",
+          "ok": true,
+          "detail": "0 enclosed hole(s), 0.0% of the subject",
+          "severity": "WARN",
+          "stage": "still",
+          "value": 0.0,
+          "limit": 0.01,
+          "data": {
+            "count": 0,
+            "ms": 0.3
+          }
+        },
+        {
+          "name": "single_subject",
+          "ok": true,
+          "detail": "1 part(s); the second is 0.0% of the subject",
+          "severity": "WARN",
+          "stage": "still",
+          "value": 0.0,
+          "limit": 0.12,
+          "data": {
+            "parts": 1,
+            "ms": 1.1
+          }
+        },
+        {
+          "name": "duplicate_cell",
+          "ok": false,
+          "detail": "hash distance 0 to cell 2",
+          "severity": "WARN",
+          "stage": "still",
+          "value": 0,
+          "limit": 4,
+          "data": {
+            "of": 2,
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "static_file",
+          "ok": true,
+          "detail": "3.6KB png",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": 3.6,
+          "limit": 512,
+          "data": {
+            "ms": 1.1
+          }
+        }
+      ],
+      "metrics": {
+        "cell": [
+          0,
+          517,
+          517,
+          507
+        ],
+        "bg": [
+          0,
+          255,
+          0
+        ],
+        "threshold": 127.5,
+        "fg_px": 19251,
+        "bbox": [
+          153,
+          205,
+          360,
+          298
+        ],
+        "scale": 2.0194,
+        "scale_mode": "pack",
+        "spill_px": 0,
+        "chroma_risk": 0.0,
+        "holes": 0.0,
+        "warnings": [
+          "duplicate_cell"
+        ],
+        "kb": 3.6,
+        "format": "png"
+      },
+      "png": "slices/img-cheerful_round_cartoon_mushr-facepalm-20261026T142013-9edec5.png",
+      "anim_status": "READY",
+      "anim_reason": null,
+      "anim_metrics": {
+        "source": "video sheet",
+        "threshold": 127.5,
+        "ms": {
+          "decode": 1829,
+          "key": 3110,
+          "bounds": 850,
+          "render": 4391,
+          "seam": 169,
+          "encode": 3878,
+          "encodes": 4,
+          "probe": 272,
+          "verify": 18,
+          "finish": 9690
+        },
+        "frames": 72,
+        "fps": 24.0,
+        "bbox": [
+          122,
+          330,
+          902,
+          692
+        ],
+        "edge_touch_frames": 0,
+        "subject_px_in_video": 780,
+        "cell_wh": [
+          1024,
+          1024
+        ],
+        "first_bbox": [
+          132,
+          350,
+          892,
+          692
+        ],
+        "core_bbox": [
+          133,
+          341,
+          891,
+          682
+        ],
+        "core_centre": [
+          511.5,
+          511.0
+        ],
+        "core_share": 0.2462,
+        "scale": 0.55,
+        "size_mode": "kept",
+        "core_canvas": [
+          47.5,
+          157.0,
+          464.5,
+          344.6
+        ],
+        "motion": 5.65,
+        "loop_seam_before": 2.85,
+        "loop_seam": 2.85,
+        "loop_limit": 12.0,
+        "frames_out": 72,
+        "cut_off_frames": 0,
+        "crf": 30,
+        "sharp_kept": 1.08,
+        "detail_vs_still": 0.82,
+        "soft_sigma": 4.0,
+        "kb": 42.8
+      },
+      "webm": "slices/vid-cheerful_round_cartoon_mushr-facepalm-20261026T142013-9edec5.webm",
+      "review": {
+        "still": "APPROVED",
+        "anim": "PENDING"
+      },
+      "history": [
+        {
+          "ts": 1793024415.035,
+          "stage": "sliced",
+          "actor": "python",
+          "decision": "PASS",
+          "reason": null,
+          "ref": null,
+          "detail": {
+            "warnings": [
+              "duplicate_cell"
+            ]
+          }
+        },
+        {
+          "ts": 1793024415.093,
+          "stage": "still",
+          "actor": "human",
+          "decision": "APPROVE",
+          "reason": "agentic creator: the person's standing approval",
+          "ref": null,
+          "detail": null
+        },
+        {
+          "ts": 1793024427.135,
+          "stage": "video_sheet",
+          "actor": "python",
+          "decision": "PASS",
+          "reason": null,
+          "ref": "A1",
+          "detail": null
+        },
+        {
+          "ts": 1793024428.278,
+          "stage": "video_sheet",
+          "actor": "human",
+          "decision": "APPROVE",
+          "reason": "approved by Make a video",
+          "ref": "A1",
+          "detail": null
+        },
+        {
+          "ts": 1793024444.711,
+          "stage": "video",
+          "actor": "python",
+          "decision": "PASS",
+          "reason": null,
+          "ref": "A1",
+          "detail": {
+            "warnings": []
+          }
+        }
+      ],
+      "anim_report": [
+        {
+          "name": "inside_slot",
+          "ok": true,
+          "detail": "inside",
+          "severity": "BLOCK",
+          "stage": "slot",
+          "value": 0,
+          "limit": 0,
+          "data": {
+            "frame": null,
+            "over_px": 0,
+            "edge_px": 15,
+            "ms": 267.5
+          }
+        },
+        {
+          "name": "cross_slot",
+          "ok": true,
+          "detail": "gutter clean",
+          "severity": "BLOCK",
+          "stage": "slot",
+          "value": 0,
+          "limit": 0,
+          "data": {
+            "frame": null,
+            "px": 0,
+            "ms": 313.9
+          }
+        },
+        {
+          "name": "size_budget",
+          "ok": true,
+          "detail": "42KB @crf30",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": 42,
+          "limit": 256,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "codec_vp9",
+          "ok": true,
+          "detail": "vp9",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": "vp9",
+          "limit": "vp9",
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "dimensions",
+          "ok": true,
+          "detail": "512x512",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": "512x512",
+          "limit": "512x512",
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "fps",
+          "ok": true,
+          "detail": "24.0",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": 24.0,
+          "limit": 30.0,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "duration",
+          "ok": true,
+          "detail": "3.0",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": 3.0,
+          "limit": 3.0,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "no_audio",
+          "ok": true,
+          "detail": "",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": null,
+          "limit": null,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "alpha_mode_tag",
+          "ok": true,
+          "detail": "",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": null,
+          "limit": null,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "alpha_decoded",
+          "ok": true,
+          "detail": "",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": null,
+          "limit": null,
+          "data": {
+            "ms": 0.8
+          }
+        },
+        {
+          "name": "loop_seam",
+          "ok": true,
+          "detail": "2.85 <= 12.0",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": 2.85,
+          "limit": 12.0,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "identity_kept",
+          "ok": true,
+          "detail": "first frame matches the still at IoU 1.00",
+          "severity": "WARN",
+          "stage": "anim",
+          "value": 1.0,
+          "limit": 0.5,
+          "data": {
+            "ms": 2.0
+          }
+        },
+        {
+          "name": "motion_present",
+          "ok": true,
+          "detail": "median frame-to-frame change 5.65",
+          "severity": "WARN",
+          "stage": "anim",
+          "value": 5.65,
+          "limit": 0.5,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "alpha_stable",
+          "ok": true,
+          "detail": "subject area varies by 0% over the frames",
+          "severity": "WARN",
+          "stage": "anim",
+          "value": 0.003,
+          "limit": 0.35,
+          "data": {
+            "ms": 15.4
+          }
+        },
+        {
+          "name": "sharpness",
+          "ok": true,
+          "detail": "0.82x of the still's edge detail (as soft as the still blurred 4.0 px)",
+          "severity": "WARN",
+          "stage": "anim",
+          "value": 0.82,
+          "limit": 0.75,
+          "data": {
+            "ms": 0.0
+          }
+        }
+      ],
+      "anim_at": 1793024444.711
+    },
+    {
+      "index": 4,
+      "key": "cheerful_round_cartoon_mushroom_flat_vector_style_four_moods_scared",
+      "tags": [
+        "cheerful_round_cartoon_mushroom_flat_vector_style_four_moods_scared",
+        "terrified",
+        "trembling",
+        "peeking"
+      ],
+      "emoji": "😨",
+      "prompt": "cheerful round cartoon mushroom flat vector style four happy moods terrified, trembling, peeking through hands, wide eyes, full body, centred, generous empty margin on every side (at least 20% of the cell), nothing touching or crossing the cell edge",
+      "name": "img-cheerful_round_cartoon_mushr-scared-20261026T142013-f9c587",
+      "status": "READY",
+      "reason": null,
+      "report": [
+        {
+          "name": "blank_cell",
+          "ok": true,
+          "detail": "foreground below minimum",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": 27509,
+          "limit": 400,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "dimensions",
+          "ok": true,
+          "detail": "(512, 512, 4)",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": [
+            512,
+            512,
+            4
+          ],
+          "limit": [
+            512,
+            512,
+            4
+          ],
+          "data": {
+            "ms": 14.5
+          }
+        },
+        {
+          "name": "transparent_corners",
+          "ok": true,
+          "detail": "",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": null,
+          "limit": null,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "foreground",
+          "ok": true,
+          "detail": "",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": 112336,
+          "limit": 400,
+          "data": {
+            "ms": 0.3
+          }
+        },
+        {
+          "name": "inside_cell",
+          "ok": true,
+          "detail": "0px on cell border",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": 0,
+          "limit": 8,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "no_spill",
+          "ok": true,
+          "detail": "0px on the edge band",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": 0,
+          "limit": 112.336,
+          "data": {
+            "ms": 2.4
+          }
+        },
+        {
+          "name": "chroma_risk",
+          "ok": true,
+          "detail": "0.0% of the subject is key-coloured",
+          "severity": "WARN",
+          "stage": "still",
+          "value": 0.0,
+          "limit": 0.03,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "holes",
+          "ok": true,
+          "detail": "0 enclosed hole(s), 0.0% of the subject",
+          "severity": "WARN",
+          "stage": "still",
+          "value": 0.0,
+          "limit": 0.01,
+          "data": {
+            "count": 0,
+            "ms": 0.5
+          }
+        },
+        {
+          "name": "single_subject",
+          "ok": true,
+          "detail": "1 part(s); the second is 0.0% of the subject",
+          "severity": "WARN",
+          "stage": "still",
+          "value": 0.0,
+          "limit": 0.12,
+          "data": {
+            "parts": 1,
+            "ms": 1.1
+          }
+        },
+        {
+          "name": "duplicate_cell",
+          "ok": true,
+          "detail": "hash distance 21 to cell 1",
+          "severity": "WARN",
+          "stage": "still",
+          "value": 21,
+          "limit": 4,
+          "data": {
+            "of": 1,
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "static_file",
+          "ok": true,
+          "detail": "27.2KB png",
+          "severity": "BLOCK",
+          "stage": "still",
+          "value": 27.2,
+          "limit": 512,
+          "data": {
+            "ms": 1.5
+          }
+        }
+      ],
+      "metrics": {
+        "cell": [
+          517,
+          517,
+          507,
+          507
+        ],
+        "bg": [
+          0,
+          255,
+          0
+        ],
+        "threshold": 127.5,
+        "fg_px": 27509,
+        "bbox": [
+          158,
+          158,
+          345,
+          345
+        ],
+        "scale": 2.0194,
+        "scale_mode": "pack",
+        "spill_px": 0,
+        "chroma_risk": 0.0,
+        "holes": 0.0,
+        "kb": 27.2,
+        "format": "png"
+      },
+      "png": "slices/img-cheerful_round_cartoon_mushr-scared-20261026T142013-f9c587.png",
+      "anim_status": "READY",
+      "anim_reason": null,
+      "anim_metrics": {
+        "source": "video sheet",
+        "threshold": 127.5,
+        "ms": {
+          "decode": 1815,
+          "key": 3089,
+          "bounds": 963,
+          "render": 4403,
+          "seam": 280,
+          "encode": 4828,
+          "encodes": 4,
+          "probe": 173,
+          "verify": 16,
+          "finish": 10797
+        },
+        "frames": 72,
+        "fps": 24.0,
+        "bbox": [
+          159,
+          159,
+          864,
+          864
+        ],
+        "edge_touch_frames": 0,
+        "subject_px_in_video": 705,
+        "cell_wh": [
+          1024,
+          1024
+        ],
+        "first_bbox": [
+          169,
+          179,
+          854,
+          864
+        ],
+        "core_bbox": [
+          169,
+          169,
+          854,
+          854
+        ],
+        "core_centre": [
+          511.0,
+          511.0
+        ],
+        "core_share": 0.352,
+        "scale": 0.5518,
+        "size_mode": "kept",
+        "core_canvas": [
+          67.0,
+          61.5,
+          445.0,
+          439.5
+        ],
+        "motion": 3.88,
+        "loop_seam_before": 4.2,
+        "loop_seam": 4.2,
+        "loop_limit": 12.0,
+        "frames_out": 72,
+        "cut_off_frames": 0,
+        "crf": 30,
+        "sharp_kept": 1.02,
+        "detail_vs_still": 0.96,
+        "soft_sigma": 0.4,
+        "kb": 148.4
+      },
+      "webm": "slices/vid-cheerful_round_cartoon_mushr-scared-20261026T142013-f9c587.webm",
+      "review": {
+        "still": "APPROVED",
+        "anim": "PENDING"
+      },
+      "history": [
+        {
+          "ts": 1793024415.039,
+          "stage": "sliced",
+          "actor": "python",
+          "decision": "PASS",
+          "reason": null,
+          "ref": null,
+          "detail": {
+            "warnings": []
+          }
+        },
+        {
+          "ts": 1793024415.101,
+          "stage": "still",
+          "actor": "human",
+          "decision": "APPROVE",
+          "reason": "agentic creator: the person's standing approval",
+          "ref": null,
+          "detail": null
+        },
+        {
+          "ts": 1793024427.135,
+          "stage": "video_sheet",
+          "actor": "python",
+          "decision": "PASS",
+          "reason": null,
+          "ref": "A1",
+          "detail": null
+        },
+        {
+          "ts": 1793024428.278,
+          "stage": "video_sheet",
+          "actor": "human",
+          "decision": "APPROVE",
+          "reason": "approved by Make a video",
+          "ref": "A1",
+          "detail": null
+        },
+        {
+          "ts": 1793024445.775,
+          "stage": "video",
+          "actor": "python",
+          "decision": "PASS",
+          "reason": null,
+          "ref": "A1",
+          "detail": {
+            "warnings": []
+          }
+        }
+      ],
+      "anim_report": [
+        {
+          "name": "inside_slot",
+          "ok": true,
+          "detail": "inside",
+          "severity": "BLOCK",
+          "stage": "slot",
+          "value": 0,
+          "limit": 0,
+          "data": {
+            "frame": null,
+            "over_px": 0,
+            "edge_px": 15,
+            "ms": 312.4
+          }
+        },
+        {
+          "name": "cross_slot",
+          "ok": true,
+          "detail": "gutter clean",
+          "severity": "BLOCK",
+          "stage": "slot",
+          "value": 0,
+          "limit": 0,
+          "data": {
+            "frame": null,
+            "px": 0,
+            "ms": 325.6
+          }
+        },
+        {
+          "name": "size_budget",
+          "ok": true,
+          "detail": "148KB @crf30",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": 148,
+          "limit": 256,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "codec_vp9",
+          "ok": true,
+          "detail": "vp9",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": "vp9",
+          "limit": "vp9",
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "dimensions",
+          "ok": true,
+          "detail": "512x512",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": "512x512",
+          "limit": "512x512",
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "fps",
+          "ok": true,
+          "detail": "24.0",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": 24.0,
+          "limit": 30.0,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "duration",
+          "ok": true,
+          "detail": "3.0",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": 3.0,
+          "limit": 3.0,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "no_audio",
+          "ok": true,
+          "detail": "",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": null,
+          "limit": null,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "alpha_mode_tag",
+          "ok": true,
+          "detail": "",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": null,
+          "limit": null,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "alpha_decoded",
+          "ok": true,
+          "detail": "",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": null,
+          "limit": null,
+          "data": {
+            "ms": 0.8
+          }
+        },
+        {
+          "name": "loop_seam",
+          "ok": true,
+          "detail": "4.2 <= 12.0",
+          "severity": "BLOCK",
+          "stage": "anim",
+          "value": 4.2,
+          "limit": 12.0,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "identity_kept",
+          "ok": true,
+          "detail": "first frame matches the still at IoU 1.00",
+          "severity": "WARN",
+          "stage": "anim",
+          "value": 0.996,
+          "limit": 0.5,
+          "data": {
+            "ms": 2.0
+          }
+        },
+        {
+          "name": "motion_present",
+          "ok": true,
+          "detail": "median frame-to-frame change 3.88",
+          "severity": "WARN",
+          "stage": "anim",
+          "value": 3.88,
+          "limit": 0.5,
+          "data": {
+            "ms": 0.0
+          }
+        },
+        {
+          "name": "alpha_stable",
+          "ok": true,
+          "detail": "subject area varies by 0% over the frames",
+          "severity": "WARN",
+          "stage": "anim",
+          "value": 0.0,
+          "limit": 0.35,
+          "data": {
+            "ms": 13.9
+          }
+        },
+        {
+          "name": "sharpness",
+          "ok": true,
+          "detail": "0.96x of the still's edge detail (as soft as the still blurred 0.4 px)",
+          "severity": "WARN",
+          "stage": "anim",
+          "value": 0.96,
+          "limit": 0.75,
+          "data": {
+            "ms": 0.0
+          }
+        }
+      ],
+      "anim_at": 1793024445.775
+    }
+  ],
+  "sheet_issues": [],
+  "added": {
+    "becdd332": [
+      "static:1",
+      "static:2",
+      "static:3",
+      "static:4"
+    ]
+  }
+}

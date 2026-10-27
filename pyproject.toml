@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stickerloom"
+version = "0.1.0"
+description = "Prompt in. Verified sticker pack out. Local-first Telegram sticker pipeline."
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "haitham72", email = "59456439+haitham72@users.noreply.github.com" }]
+keywords = ["telegram", "stickers", "webm", "generative-ai", "fastapi"]
+readme = "README.md"
+dependencies = [
+  "numpy>=1.26",
+  "opencv-python-headless>=4.9",
+  "pillow>=10",
+  "imageio-ffmpeg>=0.5",
+  "fastapi",
+  "pydantic",
+  "uvicorn",
+]
+# License: MIT (LICENSE). PyPI name `stickerloom` verified free 2026-10-26.
+
+[project.urls]
+Homepage = "https://github.com/haitham72/stickerloom"
+Repository = "https://github.com/haitham72/stickerloom"
+Issues = "https://github.com/haitham72/stickerloom/issues"
+Changelog = "https://github.com/haitham72/stickerloom/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+agent = [
+  "langgraph>=1.0",
+  "langgraph-checkpoint-sqlite>=3.1",
+  "langchain_core",
+  "tortoise-orm",
+  "redis>=5",
+]
+openai = ["openai"]
+db = ["psycopg[binary]>=3.2"]
+onnx = ["onnxruntime>=1.17"]
+dev = ["pytest", "ruff"]
+all = [
+  "langgraph>=1.0",
+  "langgraph-checkpoint-sqlite>=3.1",
+  "langchain_core",
+  "tortoise-orm",
+  "redis>=5",
+  "openai",
+  "psycopg[binary]>=3.2",
+  "onnxruntime>=1.17",
+]
+
+[project.scripts]
+stickerloom = "stickerloom.cli:main"
+
+[tool.setuptools]
+packages = ["stickerloom"]

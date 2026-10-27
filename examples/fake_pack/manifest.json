@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "format": "stickerloom-pack-export",
+  "pack": {
+    "id": "fake-pack-sample",
+    "slug": "cheerful-mushroom",
+    "title": "cheerful mushroom (fake sample)",
+    "exported_at": 1793025706.231,
+    "stickers": 5
+  },
+  "assets": [
+    {
+      "filename": "stills/img-cheerful_round_cartoon_mushr-laughing-20261026T142013-e52b96.png",
+      "media": "static",
+      "sha256": "7442ae7cb8336048d265090d94d69c7780ac1163c098d86255126bd4e2c7fa55",
+      "w": 512,
+      "h": 512,
+      "name": "img-cheerful_round_cartoon_mushr-laughing-20261026T142013-e52b96",
+      "emoji": "😂",
+      "sticker_id": "img-cheerful_round_cartoon_mushr-laughing-20261026T142013-e52b96"
+    },
+    {
+      "filename": "stills/img-cheerful_round_cartoon_mushr-crying-20261026T142013-1eddd8.png",
+      "media": "static",
+      "sha256": "1058e30723a83eb78f17234e936f09d767a56e692b6e75490ecdd2b7d3f0e84c",
+      "w": 512,
+      "h": 512,
+      "name": "img-cheerful_round_cartoon_mushr-crying-20261026T142013-1eddd8",
+      "emoji": "😭",
+      "sticker_id": "img-cheerful_round_cartoon_mushr-crying-20261026T142013-1eddd8"
+    },
+    {
+      "filename": "stills/img-cheerful_round_cartoon_mushr-facepalm-20261026T142013-9edec5.png",
+      "media": "static",
+      "sha256": "a7980fdcbfc1743cd80ade864cf915863175ab8c0c11a386f6c50077810686ed",
+      "w": 512,
+      "h": 512,
+      "name": "img-cheerful_round_cartoon_mushr-facepalm-20261026T142013-9edec5",
+      "emoji": "🤦",
+      "sticker_id": "img-cheerful_round_cartoon_mushr-facepalm-20261026T142013-9edec5"
+    },
+    {
+      "filename": "stills/img-cheerful_round_cartoon_mushr-scared-20261026T142013-f9c587.png",
+      "media": "static",
+      "sha256": "eed2fd55c846af321ae7252070348a62f7111a8ccd331b909e2a60e3dea613f2",
+      "w": 512,
+      "h": 512,
+      "name": "img-cheerful_round_cartoon_mushr-scared-20261026T142013-f9c587",
+      "emoji": "😨",
+      "sticker_id": "img-cheerful_round_cartoon_mushr-scared-20261026T142013-f9c587"
+    },
+    {
+      "filename": "animated/vid-cheerful_round_cartoon_mushr-laughing-20261026T142013-e52b96.webm",
+      "media": "video",
+      "sha256": "b6945a3da699c54958399efdaa1ac59b57559035d4f58f9a4b233f0f87a144bb",
+      "w": 512,
+      "h": 512,
+      "name": "img-cheerful_round_cartoon_mushr-laughing-20261026T142013-e52b96",
+      "emoji": "😂",
+      "sticker_id": "vid-cheerful_round_cartoon_mushr-laughing-20261026T142013-e52b96"
+    }
+  ],
+  "prompt": "a cheerful round cartoon mushroom, flat vector style, four happy moods",
+  "grid": [
+    2,
+    2
+  ],
+  "provider": "fake",
+  "models": {
+    "image": "fake_sheet",
+    "video": "fake_video"
+  },
+  "gates": "manual approve (create --auto) + Make-a-video headless equivalent",
+  "generation": "G001",
+  "stage": "video_sliced",
+  "verify_version": 2,
+  "note": "Offline fake-provider sample. Importable: stickerloom import examples/fake_pack."
+}

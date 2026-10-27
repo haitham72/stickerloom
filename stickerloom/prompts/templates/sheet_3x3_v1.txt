@@ -1,0 +1,8 @@
+{rows}x{cols} sticker sheet, {n} separate characters in equal cells, wide gaps between characters, no character touches or crosses its cell edge.
+Subject: {subject_description}.
+Style: {style}.
+Cells, row-major:
+{cells}
+Consistency: same character design, proportions and colours in all {n} cells.
+Background: flat pure {key_name} ({key_hex}) background, no shadows, no floor, no gradients, no noise.
+Margin: every character is full body, centred, with a generous empty margin on every side (at least 20% of its cell).

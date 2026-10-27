@@ -1,0 +1,6 @@
+Animate this {rows}x{cols} sheet of {units} as a {seconds}-second {clip}.
+{expressive}
+{motions}
+Each {unit} moves only inside its own cell. Empty cells stay empty. Static camera.
+Keep the flat {key_name} background and every {unit}'s design unchanged.{faces}
+{ending}

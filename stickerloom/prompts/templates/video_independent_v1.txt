@@ -1,0 +1,7 @@
+Animate this {rows}x{cols} grid of {units} perfectly in place as a {seconds}-second {clip}. Static camera, smooth fluid motion, no jitter.
+{expressive}
+All occupied cells animate concurrently from the first frame, each at its own pace. The action order below is local to that cell, not a sequence of whole-sheet scenes. Never apply one cell's actions to the other cells or transition the entire grid between emotions.
+{local_sequences}
+Keep each {unit}'s identity, stated emotion, scale and position inside its original cell. No interaction, copying, swapping or synchronized group choreography. Empty cells stay empty.
+Keep the flat {key_name} background and every {unit}'s design unchanged.{faces}
+{ending}

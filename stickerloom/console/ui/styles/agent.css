@@ -1,0 +1,343 @@
+/* AI: the agentic chat. One memorable thing (a living coral aurora that answers the pointer); everything on top of it is quiet.
+   Palette: sky wash #F2FBFE, AI coral #D95A48 / #EE6C5A, deep teal ink #0B3B4A, accent blue #3B82F6, a violet haze #8B5CF6 only inside the aurora.
+   Type: Inter (bundled). The greeting is the one place that carries colour in type. Motion: the aurora and the pointer glow (ambient, asked for),
+   the step trace writing itself (it answers an action), the carousel snap. prefers-reduced-motion switches the ambient motion off. */
+/* the tokens of this screen (--ai, --wash, --glass, --aglow, ...) live in :root in studio.css now: every screen reads the same names */
+#s-agent.on{display:flex;padding:0;overflow:hidden;position:relative;background:var(--wash);color:var(--ink)}
+
+/* ---- the living background */
+.ai-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;background:radial-gradient(1100px 700px at 12% -8%,#E3F8FF 0%,transparent 62%),linear-gradient(180deg,#F6FCFF 0%,#EDF5FF 100%)}
+.ai-blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;will-change:transform;transform:translate3d(calc(var(--px,0)*-34px),calc(var(--py,0)*-26px),0)}
+.ai-blob.b1{width:46vmax;height:46vmax;left:-12vmax;top:-16vmax;background:#EE6C5A;animation:aidrift 27s ease-in-out infinite alternate}
+.ai-blob.b2{width:40vmax;height:40vmax;right:-14vmax;top:8vmax;background:#60A5FA;opacity:.42;animation:aidrift 33s ease-in-out -9s infinite alternate-reverse}
+.ai-blob.b3{width:34vmax;height:34vmax;left:22vw;bottom:-20vmax;background:#C4B5FD;opacity:.38;animation:aidrift 39s ease-in-out -17s infinite alternate}
+@keyframes aidrift{from{margin:0}50%{margin:3vmax 2vmax 0 -2vmax}to{margin:-2vmax -3vmax 0 3vmax}}
+.ai-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(217,90,72,.55) 1px,transparent 1.5px);background-size:24px 24px;-webkit-mask-image:radial-gradient(240px 240px at var(--gx,60%) var(--gy,28%),#000,transparent);mask-image:radial-gradient(240px 240px at var(--gx,60%) var(--gy,28%),#000,transparent);opacity:.55}
+.ai-glow{position:absolute;left:0;top:0;width:560px;height:560px;margin:-280px 0 0 -280px;border-radius:50%;background:radial-gradient(closest-side,rgba(238,108,90,.34),rgba(96,165,250,.14) 55%,transparent 74%);transform:translate3d(var(--gx,60%),var(--gy,28%),0);will-change:transform}
+@media (prefers-reduced-motion:reduce){.ai-blob{animation:none}.ai-glow{display:none}}
+
+/* ---- frame */
+.ai{position:relative;display:flex;flex:1;min-width:0;height:100%}
+.ai-main{position:relative;display:flex;flex-direction:column;flex:1;min-width:0;min-height:0}
+.ai-top{display:flex;align-items:center;gap:10px;padding:14px 22px 0;min-height:52px}
+.ai-top .ttl{font-weight:600;font-size:var(--fs-m);color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:46vw}
+.ai-top .sp{flex:1}
+.ai-pill{display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:var(--r-pill);background:var(--glass);border:1px solid var(--aline);font-size:var(--fs-s);color:var(--ink2);backdrop-filter:blur(10px)}
+.ai-pill i{width:7px;height:7px;border-radius:50%;background:#94A3B8}.ai-pill.up i{background:var(--ai);box-shadow:0 0 0 3px var(--aglow)}
+.ai-ibtn{width:36px;height:36px;border:0;border-radius:var(--r-m);background:none;color:var(--ink2);display:inline-flex;align-items:center;justify-content:center}
+.ai-ibtn:hover{background:rgba(238,108,90,.10)}.ai-ibtn svg{width:19px;height:19px}
+.ai-scroll{flex:1;overflow-y:auto;padding:18px 22px 6px}                 /* no CSS smooth scroll: switching chats used to animate the old scroll position into the new chat (it looked like swiping up and down); new messages scroll smoothly from the script */
+.ai-msgs.is-switched{animation:ai-swap .22s ease-out}@keyframes ai-swap{from{opacity:0}to{opacity:1}}
+.ai-col{max-width:820px;margin:0 auto;width:100%}
+
+/* ---- the greeting: the only coloured type */
+.ai.is-hero .ai-main{justify-content:center}
+.ai.is-hero .ai-top{position:absolute;left:0;right:0;top:0}
+.ai.is-hero .ai-scroll{flex:none;overflow:visible}
+.ai-hero{text-align:center;padding:0 0 22px}
+.ai-greet{margin:0;font-size:clamp(34px,5.4vw,62px);line-height:1.08;font-weight:600;letter-spacing:-.038em;background:linear-gradient(100deg,#0B6B82 0%,#C24A38 32%,#2563EB 66%,#7C3AED 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:aihue 14s ease-in-out infinite alternate}
+@keyframes aihue{to{background-position:100% 0}}
+@media (prefers-reduced-motion:reduce){.ai-greet{animation:none}}
+.ai-hero-in{animation:aiin .9s cubic-bezier(.2,.7,.2,1) both}
+@keyframes aiin{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+
+/* ---- composer */
+.ai-dock{padding:10px 22px 22px;position:relative}
+.ai-dock-in{max-width:820px;margin:0 auto;position:relative}
+.ai-box{display:flex;align-items:flex-end;gap:6px;padding:8px 8px 8px 18px;border-radius:var(--r-l);background:var(--glass);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);box-shadow:0 14px 44px rgba(238,108,90,.16),inset 0 0 0 1px var(--aline);transition:box-shadow .25s}
+.ai-box:focus-within{box-shadow:0 16px 54px rgba(238,108,90,.28),inset 0 0 0 1.5px var(--ai)}
+.ai-box textarea{flex:1;border:0;background:transparent;resize:none;outline:none;padding:9px 2px;font-size:var(--fs-l);line-height:1.45;max-height:132px;color:var(--ink);min-height:24px}
+.ai-box textarea:focus{background:transparent;outline:none;border:0}
+.ai-box textarea::placeholder{color:var(--ink3)}
+.ai-send{width:42px;height:42px;border:0;border-radius:50%;flex:none;color:#fff;background:linear-gradient(135deg,#EE6C5A,#C24A38 60%,#3B82F6);box-shadow:0 6px 18px rgba(238,108,90,.42);display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,box-shadow .2s,opacity .2s}
+.ai-send:hover{transform:translateY(-1px);box-shadow:0 9px 24px rgba(238,108,90,.5)}.ai-send:disabled{opacity:.45;box-shadow:none;transform:none;cursor:default}
+.ai-send svg{width:20px;height:20px}
+.ai-send.busy svg{display:none}.ai-send.busy::after{content:"";width:18px;height:18px;border-radius:50%;border:2.5px solid #ffffff66;border-top-color:#fff;animation:aispin .8s linear infinite}
+@keyframes aispin{to{transform:rotate(360deg)}}
+.ai-sel{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px 6px}
+.ai-selchip{display:inline-flex;align-items:center;gap:6px;padding:4px 6px 4px 12px;border-radius:var(--r-pill);background:#E0F7FD;border:1px solid var(--aline);font-size:var(--fs-s);color:var(--aid);font-weight:500}
+.ai-selchip button{border:0;background:none;color:var(--aid);width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center}.ai-selchip button:hover{background:#D95A4822}
+.ai-selchip svg{width:12px;height:12px}
+.ag-bar{display:flex;gap:8px;flex-wrap:wrap;margin:10px 4px 0}
+.ag-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:var(--r-pill);border:1px solid var(--aline);background:var(--glass);backdrop-filter:blur(10px);color:var(--ink2);font-size:var(--fs-s);font-weight:500}
+.ag-chip svg{width:14px;height:14px}.ag-chip:hover{border-color:var(--ai);color:var(--aid);background:#fff}
+.ag-chip.warn{color:#B45309;border-color:rgba(251,146,60,.5);background:rgba(251,146,60,.10)}
+.ag-styles{display:flex;gap:6px;overflow-x:auto;margin:8px -4px 0;padding:2px 4px 6px;scrollbar-width:thin;scroll-snap-type:x proximity}
+.ag-st{position:relative;flex:none;width:76px;display:flex;flex-direction:column;align-items:center;gap:4px;padding:5px 4px 6px;border:0;border-radius:var(--r-m);background:transparent;color:var(--ink2);scroll-snap-align:start;transition:background .15s,box-shadow .2s,color .15s}
+.ag-st img{width:46px;height:46px;border-radius:var(--r-m);object-fit:cover;display:block;box-shadow:inset 0 0 0 1px var(--aline)}
+.ag-st b{font-size:var(--fs-xs);font-weight:550;max-width:100%;line-height:1.15;text-align:center;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ag-st:hover{background:#ffffffb3}
+.ag-st.on{background:#fff;color:var(--aid);box-shadow:inset 0 0 0 2px var(--ai),0 6px 16px -8px var(--aglow)}
+.ag-st.on::after{content:"";position:absolute;top:3px;right:13px;width:14px;height:14px;border-radius:50%;background:var(--ai) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/9px no-repeat;box-shadow:0 0 0 2px #fff}
+.ag-cur{cursor:default}.ag-cur img{width:18px;height:18px;border-radius:var(--r-s);object-fit:cover}.ag-cur:hover{border-color:var(--aline);color:var(--ink2);background:var(--glass)}
+.ai.is-hero .ag-cur{display:none}
+.ai:not(.is-hero) .ag-styles{gap:2px}.ai:not(.is-hero) .ag-st{width:50px;padding:4px 3px}.ai:not(.is-hero) .ag-st img{width:34px;height:34px}.ai:not(.is-hero) .ag-st b{display:none}.ai:not(.is-hero) .ag-st.on::after{right:6px}
+.ai.is-hero .ag-bar{justify-content:center}.ai.is-hero .ag-styles{justify-content:safe center}
+.ai-sugg{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px}
+.ai-chip{border:1px solid var(--aline);background:var(--glass);backdrop-filter:blur(10px);color:var(--ink2);padding:8px 15px;border-radius:var(--r-pill);font-size:var(--fs-m);transition:background .15s,border-color .15s,transform .15s}
+.ai-chip:hover{background:#fff;border-color:var(--ai);color:var(--aid);transform:translateY(-1px)}
+.ai-chip.pri{background:linear-gradient(135deg,#EE6C5A,#C24A38);color:#fff;border-color:transparent;box-shadow:0 6px 16px rgba(238,108,90,.35);font-weight:600}
+.ai-chip.pri:hover{color:#fff;background:linear-gradient(135deg,#2ADBF5,#A03A2C)}
+/* the one-time AI vision switch (UI/UX spec P9): on the right, a subtle conic glow turns round its border while the question is undecided; at rest under reduced motion */
+@property --ag-ang{syntax:'<angle>';inherits:false;initial-value:0deg}
+.ai-vis{margin-left:auto;display:inline-flex;flex:none;filter:drop-shadow(0 0 7px rgba(238,108,90,.35))}
+.ai-vis .ai-chip{--cut:11px;position:relative;isolation:isolate;border:0;border-radius:0;padding:10px 22px;min-height:42px;white-space:nowrap;font-weight:600;color:var(--aid);background:conic-gradient(from var(--ag-ang),#EE6C5A,#F6A795,#EE6C5A);backdrop-filter:none;transform:none;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
+.ai-vis .ai-chip::before{content:"";position:absolute;inset:1.5px;z-index:-1;background:#fff;clip-path:polygon(calc(var(--cut) - 1.5px) 0,100% 0,100% calc(100% - var(--cut) + 1.5px),calc(100% - var(--cut) + 1.5px) 100%,0 100%,0 calc(var(--cut) - 1.5px))}
+.ai-vis .ai-chip:hover{background:conic-gradient(from var(--ag-ang),#EE6C5A,#F6A795,#EE6C5A);color:var(--aid);transform:none}.ai-vis .ai-chip:hover::before{background:#F3FCFE}
+.ai-vis.glow{filter:drop-shadow(0 0 11px rgba(238,108,90,.55))}.ai-vis.glow .ai-chip{animation:ag-spin 6s linear infinite}
+.ai-vis.is-on .ai-chip::before{background:linear-gradient(135deg,#E4FAFD,#EDEBFF)}
+@keyframes ag-spin{to{--ag-ang:360deg}}
+@media (prefers-reduced-motion:reduce){.ai-vis.glow .ai-chip{animation:none}}
+
+/* Left: image/video models and creation options. Top right: a separately anchored LLM selector. */
+.ai-set{position:absolute;left:0;bottom:calc(100% + 10px);width:290px;padding:14px;border-radius:var(--r);background:rgba(255,255,255,.92);backdrop-filter:blur(18px);box-shadow:0 18px 50px rgba(8,80,100,.20),inset 0 0 0 1px var(--aline);display:none;z-index:5}
+.ai-set.on{display:block;animation:aiin .22s ease both}
+.ai-set{max-height:min(70vh,560px);overflow:auto}
+.ai-set .r{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 0}
+.ai-set .r + .r{border-top:1px solid var(--aline);margin-top:6px;padding-top:12px}
+.ai-set b{font-weight:600;font-size:var(--fs-m);display:block}.ai-set small{color:var(--ink3);font-size:var(--fs-s);line-height:1.3;display:block;margin-top:2px}
+.ai-seg{display:inline-flex;background:#E7F6FA;border-radius:var(--r-pill);padding:3px}
+.ai-seg button{border:0;background:none;padding:5px 13px;border-radius:var(--r-pill);font-size:var(--fs-m);color:var(--ink2);font-weight:500}.ai-seg button.on{background:#fff;color:var(--aid);box-shadow:0 1px 4px rgba(8,80,100,.18);font-weight:600}
+.ai-sw{position:relative;width:44px;height:26px;border-radius:var(--r-pill);border:0;background:#CBD5E1;flex:none;transition:background .2s}
+.ai-sw::after{content:"";position:absolute;left:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px #0003;transition:transform .2s}
+.ai-sw.on{background:var(--ai)}.ai-sw.on::after{transform:translateX(18px)}
+
+/* ---- messages */
+.ai-msgs{display:flex;flex-direction:column;gap:22px;padding-bottom:12px}
+.ai-m.user{display:flex;justify-content:flex-end}
+.ai-m.user .b{max-width:78%;padding:10px 16px;border-radius:var(--r-l) var(--r-l) var(--r-s) var(--r-l);background:linear-gradient(135deg,#DDF6FC,#E4EEFF);border:1px solid var(--aline);font-size:var(--fs-l);line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere}
+.ai-m.bot{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+.ai-av{width:30px;height:30px;border-radius:50%;margin-top:2px;background:linear-gradient(135deg,#EE6C5A,#3B82F6 70%,#8B5CF6);display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 4px 14px rgba(238,108,90,.4)}
+.ai-av svg{width:16px;height:16px}
+.ai-m.bot.working .ai-av{animation:aibeat 1.8s ease-in-out infinite}
+@keyframes aibeat{50%{box-shadow:0 0 0 9px rgba(238,108,90,.14),0 4px 14px rgba(238,108,90,.4)}}
+@media (prefers-reduced-motion:reduce){.ai-m.bot.working .ai-av{animation:none}}
+.ai-body{min-width:0}
+.ai-text{font-size:var(--fs-l);line-height:1.6;color:var(--ink);max-width:68ch;overflow-wrap:anywhere}
+.ai-text b{font-weight:650}
+.ai-err{color:#B91C1C}
+
+/* ---- the step trace: the little task queue (a corner, a rail, dots, a diamond for what memory added, a corner to close) */
+.tr{margin:2px 0 12px;font-size:var(--fs-m);color:var(--ink2)}
+.tr-row{position:relative;display:grid;grid-template-columns:18px 1fr;gap:9px;padding:4px 0;align-items:start;animation:aiin .28s ease both}
+.tr-row::before{content:"";position:absolute;left:8.25px;top:-4px;bottom:-4px;width:1.5px;background:var(--aline)}
+.tr-row.is-first::before{top:14px}.tr-row.is-last::before{bottom:auto;height:14px;top:-4px}.tr-row.is-first.is-last::before{display:none}
+.tr-mk{position:relative;width:9px;height:9px;margin:5px 0 0 4px;border-radius:50%;background:var(--ai);box-shadow:0 0 0 4px var(--aglow);z-index:1}
+.tr-row.k-task .tr-mk{width:10px;height:10px;margin:6px 0 0 4px;background:none;box-shadow:none;border:2px solid var(--ai);border-right:0;border-bottom:0;border-radius:4px 0 0 0}
+.tr-row.k-final .tr-mk{width:10px;height:10px;margin:0 0 0 4px;background:none;box-shadow:none;border:2px solid var(--ai);border-right:0;border-top:0;border-radius:0 0 0 4px;align-self:center;position:relative;top:-2px}
+.tr-row.k-note .tr-mk{width:9px;height:9px;border-radius:4px;transform:rotate(45deg);background:#fff;border:2px solid var(--ai);box-shadow:none;margin:6px 0 0 4px}
+.tr-row.k-error .tr-mk{border-color:#EF4444}
+.tr-row.k-task .tr-t{font-weight:650;color:var(--ink);font-size:var(--fs-m)}
+.tr-row.k-note .tr-t{color:var(--aid)}
+.tr-t{display:flex;align-items:flex-start;gap:6px;line-height:1.5;border:0;background:none;padding:0;text-align:left;color:inherit;font:inherit}
+button.tr-t{cursor:pointer}button.tr-t:hover{color:var(--aid)}
+.tr-t svg{width:13px;height:13px;margin-top:4px;flex:none;transition:transform .18s;color:var(--ai)}.tr-open .tr-t svg{transform:rotate(90deg)}
+.tr-d{grid-column:2;margin:2px 0 4px;padding:8px 12px;border-radius:var(--r-m);background:rgba(255,255,255,.65);border:1px solid var(--aline);color:var(--ink2);font-size:var(--fs-s);line-height:1.5;max-height:190px;overflow:auto}
+.tr-d div + div{margin-top:2px}
+.tr-think .tr-t{color:var(--ink3)}
+.tr-think .dots::after{content:"";animation:aidots 1.4s steps(4,end) infinite}
+@keyframes aidots{0%{content:""}25%{content:"."}50%{content:".."}75%,100%{content:"..."}}
+.tr-sum{display:inline-flex;align-items:center;gap:7px;padding:4px 11px 4px 9px;border-radius:var(--r-pill);border:1px solid var(--aline);background:rgba(255,255,255,.55);color:var(--ink3);font-size:var(--fs-s);margin:0 0 10px}
+.tr-sum:hover{color:var(--aid);border-color:var(--ai)}.tr-sum svg{width:12px;height:12px;transition:transform .18s}.tr-sum.open svg{transform:rotate(90deg)}
+
+/* ---- cards */
+.ai-card{margin:10px 0;border-radius:var(--r-l);background:var(--glass);backdrop-filter:blur(16px) saturate(1.2);-webkit-backdrop-filter:blur(16px) saturate(1.2);box-shadow:0 12px 40px rgba(8,100,130,.10),inset 0 0 0 1px var(--aline);overflow:hidden}
+.ai-ch{display:flex;align-items:center;gap:10px;padding:14px 18px 6px}
+.ai-ch b{font-size:var(--fs-l);font-weight:650;letter-spacing:-.01em}.ai-ch small{color:var(--ink3);font-size:var(--fs-s)}.ai-ch .sp{flex:1}
+.ai-link{border:0;background:none;color:var(--aid);font-weight:600;font-size:var(--fs-m);padding:5px 9px;border-radius:var(--r-s)}.ai-link:hover{background:#D95A4814}
+.plan-tags{display:flex;flex-wrap:wrap;gap:6px;padding:4px 18px 4px}
+.plan-tags span{padding:3px 10px;border-radius:var(--r-pill);background:#E7F6FA;color:var(--aid);font-size:var(--fs-s)}
+.plan-foot{display:flex;align-items:center;gap:12px;padding:12px 18px 16px;flex-wrap:wrap}
+.plan-foot .price{color:var(--ink2);font-size:var(--fs-m);flex:1;min-width:140px}
+.plan-foot .price b{color:var(--ink)}
+.plan-foot .go{border:0;border-radius:var(--r-pill);padding:10px 22px;color:#fff;font-weight:650;background:linear-gradient(135deg,#EE6C5A,#C24A38 62%,#3B82F6);box-shadow:0 8px 22px rgba(238,108,90,.4)}
+.plan-foot .go:hover{transform:translateY(-1px)}
+.plan-foot .no{border:0;background:none;color:var(--ink2);padding:10px 12px;border-radius:var(--r-pill);font-weight:550}.plan-foot .no:hover{background:#D95A4814}
+.ai-card.is-done .plan-foot .go,.ai-card.is-done .plan-foot .no{display:none}
+
+/* ---- the carousel: swipe on a phone, drag or arrows on a desktop, snap everywhere */
+.car{position:relative;padding:4px 0 12px}
+.car-vp{position:relative}
+.car-track{display:flex;gap:12px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-padding:0 18px;padding:6px 18px 8px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;outline:none;cursor:grab;touch-action:pan-x pan-y}
+.car-track::-webkit-scrollbar{display:none}
+.car-track.is-drag{scroll-snap-type:none;cursor:grabbing;scroll-behavior:auto}
+.ag-tile{flex:0 0 clamp(150px,34%,214px);min-width:0;scroll-snap-align:start;margin:0;position:relative;border-radius:var(--r);user-select:none}
+.ag-tile .ag-ph{position:relative;aspect-ratio:1;border-radius:var(--r);overflow:hidden;background:conic-gradient(#e6eef2 25%,#f9fcfd 0 50%,#e6eef2 0 75%,#f9fcfd 0) 0 0/16px 16px;box-shadow:inset 0 0 0 1px var(--aline);transition:box-shadow .15s,transform .2s}
+.ag-tile:hover .ag-ph{transform:translateY(-2px)}
+.ag-tile .ag-ph img,.ag-tile .ag-ph video{width:100%;height:100%;object-fit:contain;display:block;pointer-events:none;-webkit-user-drag:none}
+.ag-tile.is-sel .ag-ph{box-shadow:inset 0 0 0 3px var(--ai),0 8px 24px var(--aglow)}
+/* a rejection never dims or hides the picture: a blocked tile wears the locked red (a ring and a hatch while it is not in the set, a solid wash with a
+   check once it was allowed by the person). "Allowed by you" reads as a record, not as "ok". */
+.ag-tile.is-bad .ag-ph{box-shadow:inset 0 0 0 2px #ef4444}
+.ag-tile .ag-hatch{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(45deg,rgba(239,68,68,.14) 0 6px,transparent 6px 12px)}
+.ag-tile.is-allowed .ag-hatch{background:rgba(239,68,68,.16)}
+.ag-tile .ag-why{padding:6px 4px 0;font-size:var(--fs-s);color:var(--ink2);line-height:1.4}
+.ag-tile .ag-alw{display:flex;gap:6px;flex-wrap:wrap;padding:6px 4px 0}
+.ag-tile .ag-alw .ai-chip{padding:6px 12px;font-size:var(--fs-s)}
+.ag-tile.is-wait .ag-ph{background:linear-gradient(100deg,#E6F6FA 30%,#F6FCFE 50%,#E6F6FA 70%) 0 0/220% 100%;animation:aishim 1.5s linear infinite}
+@keyframes aishim{to{background-position:-120% 0}}
+@media (prefers-reduced-motion:reduce){.ag-tile.is-wait .ag-ph{animation:none}}
+.ag-tile .ag-nm{display:flex;align-items:center;gap:6px;padding:7px 4px 0;font-size:var(--fs-s);color:var(--ink2);white-space:nowrap;overflow:hidden;min-width:0}
+.ag-tile .ag-nm b{flex:none}
+.ag-tile .ag-nm b{color:var(--ink);font-weight:650}.ag-tile .ag-nm span{overflow:hidden;text-overflow:ellipsis}
+.ag-tile .ag-bd{position:absolute;right:8px;top:8px;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#fff;box-shadow:0 2px 8px #0002;color:var(--aid)}
+.ag-tile .ag-bd svg{width:13px;height:13px}.ag-tile .ag-bd.is-no{color:#DC2626}.ag-tile .ag-bd.is-ok{color:#DC2626}
+.car-nav{position:absolute;top:calc(50% - 30px);width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.92);box-shadow:0 6px 20px rgba(8,100,130,.22);color:var(--aid);display:flex;align-items:center;justify-content:center;z-index:2;opacity:0;transition:opacity .18s,transform .18s}
+.car-vp:hover .car-nav{opacity:1}.car-nav:hover{transform:scale(1.07)}.car-nav[disabled]{opacity:0!important;pointer-events:none}
+.car-nav.prev{left:8px}.car-nav.next{right:8px}.car-nav svg{width:20px;height:20px}
+.car-dots{display:flex;gap:6px;justify-content:center;padding-top:2px}
+.car-dots i{width:6px;height:6px;border-radius:50%;background:#B6DDE6;transition:width .2s,background .2s}.car-dots i.on{width:18px;border-radius:var(--r-pill);background:var(--ai)}
+.car-note{padding:0 20px 14px;color:var(--ink3);font-size:var(--fs-s);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+@media (hover:none){.car-nav{display:none}}
+
+/* ---- quick replies */
+.ag-sel{display:inline-flex;align-items:center;gap:6px;position:relative;cursor:pointer}.ag-sel select{appearance:none;-webkit-appearance:none;border:0;background:none;font:inherit;color:inherit;cursor:pointer;padding:0 16px 0 0;outline:0}.ag-sel::after{content:"";position:absolute;right:12px;top:50%;width:6px;height:6px;margin-top:-5px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);pointer-events:none}.ag-sel:focus-within{border-color:var(--ai)}
+.ai-chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0}
+
+/* ---- the chats in the shared second column (the column, the rail and the phone layout are the shell's: studio.css) */
+.sess-new{display:flex;align-items:center;gap:10px;margin:2px 12px 8px;padding:11px 14px;border-radius:var(--r-m);border:0;background:linear-gradient(135deg,#E0F7FD,#E6F0FF);color:var(--aid,#A03A2C);font-weight:600;width:calc(100% - 24px);text-align:left}
+.sess-new svg{width:18px;height:18px}.sess-new:hover{filter:brightness(.97)}.ai-sw:hover{filter:brightness(.96)}
+.sess-row{display:flex;align-items:center;gap:6px;padding:10px 12px;border-radius:var(--r-m);cursor:pointer;margin:0 4px}
+.sess-row:hover{background:#F0F9FC}.sess-row.on{background:#E3F4F9}
+.sess-row .t{flex:1;min-width:0}.sess-row b{display:block;font-weight:600;font-size:var(--fs-m);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sess-row small{color:var(--mut2);font-size:var(--fs-s);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.sess-row .x{opacity:0;border:0;background:none;width:28px;height:28px;border-radius:var(--r-s);color:#64748B}.sess-row:hover .x{opacity:1}.sess-row .x:hover{background:#fee2e2;color:#b91c1c}.sess-row .x svg{width:15px;height:15px}
+@media (hover:none){.sess-row .x{opacity:.6}}
+@media (max-width:760px){
+ .ai-top{padding:10px 12px 0}.ai-scroll{padding:12px 14px 4px}.ai-dock{padding:8px 12px 12px}
+ .ai-greet{font-size:clamp(30px,9vw,44px)}
+ .ai-m.bot{grid-template-columns:28px 1fr;gap:9px}.ai-av{width:26px;height:26px}
+ .ag-tile{flex-basis:62%}
+ .ai-box{padding:6px 6px 6px 14px}
+ .ai-set{width:min(88vw,300px)}
+}
+
+/* the engine pill is a button now (it opens the settings, where Auto / Local / Cloud live); an engine that is not available is dimmed and says why in its tooltip */
+button.ai-pill{cursor:pointer;font-family:inherit;min-width:0;max-width:62vw}
+button.ai-pill:hover{border-color:var(--ai)}
+button.ai-pill span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ai-seg button.is-off{opacity:.45}
+/* the local model, the second half of the engine row: a note and a dropdown of what the server lists, under the Auto / Local / Cloud switch */
+.ai-set .r.ag-mrow{flex-wrap:wrap;border-top:0;margin-top:0;padding-top:0}
+.ai-set .ag-mrow>div{flex:1 1 100%;min-width:0}
+.ai-set .ag-mrow small{overflow-wrap:anywhere}
+.ag-sel{display:block;width:100%;margin-top:6px;padding:7px 10px;border-radius:var(--r-m);border:1px solid var(--aline);background:#fff;color:var(--ink);font-size:var(--fs-m);cursor:pointer}
+.ag-sel:hover{border-color:var(--ai)}
+.ag-sel:disabled{opacity:.5;cursor:default}
+/* the sheet-size chip in the composer bar. Its OWN class on purpose: .ag-sel belongs to the settings panel's full-width model drop-down (display:block;width:100%), and reusing it here stretched the chip over its own row. Keep every bar chip on .ag-chip alone, never .ag-sel. */
+.ag-grid{cursor:pointer;font-variant-numeric:tabular-nums}
+.ag-grid:active{transform:translateY(1px)}
+
+/* a sheet Python blocked: said in words, with the one button that fixes it */
+.ai-problem{display:flex;flex-direction:column;gap:6px;align-items:flex-start;padding:10px 12px;border-radius:var(--r-m);background:rgba(251,146,60,.10);border:1px solid rgba(251,146,60,.35);font-size:var(--fs-m);line-height:1.45}
+.ai-problem b{font-size:var(--fs-m)}.ai-problem small{opacity:.75}
+
+/* the creator's run card: the list of steps and what it stopped for */
+.ai-run .run-steps{list-style:none;margin:6px 18px 16px;padding:0;display:flex;flex-wrap:wrap;gap:6px 14px;font-size:var(--fs-s)}
+.ai-run .run-steps li{display:flex;align-items:center;gap:6px;color:var(--ink2)}
+.ai-run .run-steps i{width:8px;height:8px;border-radius:50%;background:#CBD5E1}
+.ai-run .run-steps li.done i{background:var(--ai)}
+.ai-run .run-steps li.now{color:var(--ink);font-weight:600}
+.ai-run .run-steps li.now i{background:var(--ai);box-shadow:0 0 0 3px var(--aglow)}
+.ai-run.is-running .run-steps li.now i{animation:aipulse 1.2s ease-in-out infinite}
+.ai-run .run-st{font-size:var(--fs-s);opacity:.8}
+.ai-run .run-why{margin:-4px 18px 16px;padding:8px 10px;border-radius:var(--r-m);background:rgba(251,146,60,.10);border:1px solid rgba(251,146,60,.35);font-size:var(--fs-m)}
+.ai-run.is-done .run-why{display:none}
+/* the bulk pair on the creator's card, per kind: the same control the Studio has, above the carousel */
+.ai-run .run-bulk{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:-4px 18px 16px}
+.ai-run .run-bulk .run-alw{display:flex;gap:6px;flex-wrap:wrap}
+.ai-run .run-bulk .mut{font-size:var(--fs-s)}
+@keyframes aipulse{0%,100%{opacity:1}50%{opacity:.35}}
+.ai-card.multi .multi-item{padding:10px 0 6px;border-top:1px solid var(--aline)}
+.ai-card.multi .multi-h{display:flex;gap:8px;align-items:baseline;padding:0 18px 6px}
+.ai-card.multi .multi-h small{color:var(--ink3);font-size:var(--fs-s)}
+.ai-card.multi .multi-ch{display:flex;flex-wrap:wrap;gap:6px;padding:0 18px 6px}
+.ai-card.multi .multi-ch span{padding:2px 10px;border-radius:var(--r-pill);background:#FEF3C7;color:#92400E;font-size:var(--fs-s)}
+.ai-card.multi .multi-assume{padding:8px 18px 0;font-size:var(--fs-s);color:var(--ink3)}
+
+/* the stage slider left of Send: how far a NEW request goes, six outline icons on one thin track.
+   Minimal and flat (a reasoning-level slider); the ▾ opens only the task slider upwards. The left selector holds image/video models. */
+.ag-stage{position:relative;flex:none;align-self:flex-end;margin-bottom:5px}
+/* closed: the current stage icon and a caret, named by its tooltip and accessible label */
+.ag-stage-btn{display:inline-flex;align-items:center;gap:5px;height:32px;padding:0 9px;border:0;border-radius:var(--r-pill);background:var(--fill);color:var(--tx);font:inherit;cursor:pointer;transition:background .15s}
+.ag-stage-btn i{display:flex;color:var(--mut)}.ag-stage-btn i svg{width:12px;height:12px}
+.ag-stage-btn:hover,.ag-stage-btn[aria-expanded=true]{background:var(--pri-l);color:var(--pri-d)}
+.ag-stage-icon{display:inline-flex;align-items:center;justify-content:center;flex:none}
+.ag-stage-icon svg{width:18px;height:18px}
+.ag-stage-btn:focus-visible,.ag-stop:focus-visible{outline:2px solid var(--pri);outline-offset:2px}
+/* open: the slider (a range with a thumb, like Claude's thinking slider), the ticks of the six stops, and their names under it */
+.ag-slider{position:relative;margin:8px 12px 0;height:22px}
+.ag-range{-webkit-appearance:none;appearance:none;position:relative;z-index:2;width:100%;height:22px;margin:0;background:transparent;cursor:pointer}
+.ag-range:focus{outline:none}
+.ag-range::-webkit-slider-runnable-track{height:4px;border-radius:var(--r-pill);background:linear-gradient(90deg,var(--pri) 0 calc(var(--k) * 20%),var(--bd) calc(var(--k) * 20%) 100%)}
+.ag-range::-moz-range-track{height:4px;border-radius:var(--r-pill);background:var(--bd)}
+.ag-range::-moz-range-progress{height:4px;border-radius:var(--r-pill);background:var(--pri)}
+.ag-range::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;margin-top:-7px;border-radius:50%;background:#fff;border:0;box-shadow:0 0 0 1px #0f172a1f,0 2px 6px #0f172a33;transition:transform .15s var(--ease)}
+.ag-range::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fff;border:0;box-shadow:0 0 0 1px #0f172a1f,0 2px 6px #0f172a33}
+.ag-range:active::-webkit-slider-thumb{transform:scale(1.12)}
+.ag-range:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 3px var(--pri-glow),0 2px 6px #0f172a33}
+.ag-ticks{position:absolute;z-index:1;left:9px;right:9px;top:9px;display:flex;justify-content:space-between;pointer-events:none}
+.ag-ticks i{width:4px;height:4px;border-radius:50%;background:#C3CEDA}.ag-ticks i.on{background:#fff}
+.ag-names{display:grid;grid-template-columns:repeat(6,1fr);justify-items:center;margin:4px 0 0}
+.ag-stop{display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:0;border-radius:var(--r-s);background:none;color:var(--mut);cursor:pointer;transition:background .15s,color .15s}
+.ag-stop:hover{background:var(--fill);color:var(--tx)}.ag-stop.on{background:var(--pri-l);color:var(--pri-d)}
+.ag-stage-caption{display:flex;align-items:baseline;justify-content:center;gap:8px;margin:6px 8px 4px;font-size:var(--fs-xs);color:var(--mut)}
+.ag-stage-caption b{font-weight:600;color:var(--tx)}
+.sp-hint{margin:6px 10px 2px;font-size:var(--fs-s);color:var(--mut)}
+.ag-stage-pop{position:absolute;right:-40px;bottom:calc(100% + 10px);z-index:20;width:320px;max-height:min(70vh,560px);overflow:auto;padding:6px;border-radius:var(--r-m);background:#fff;box-shadow:0 18px 50px rgba(8,60,80,.18),inset 0 0 0 1px var(--aline);animation:mz-in .22s var(--ease) both}
+.sp-r{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 10px;font-size:var(--fs-s);color:var(--ink)}
+.sp-r>span{display:flex;flex-direction:column;font-weight:500}.sp-r small{font-size:var(--fs-xs);color:var(--ink3);font-weight:400}
+.sp-r select{max-width:160px;padding:5px 24px 5px 10px;border:0;border-radius:var(--r-s);background:#EEF6F9 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2335606E' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 8px center/12px;appearance:none;-webkit-appearance:none;font-size:var(--fs-s);color:var(--ink);cursor:pointer;text-overflow:ellipsis}
+.sp-r select:hover,.sp-r select:focus-visible{background-color:#E2F1F6;outline:none}
+.sp-r .ai-seg button{padding:3px 11px;font-size:var(--fs-s)}
+.sp-r .ai-sw{transform:scale(.85);transform-origin:right center}
+.ag-cur{cursor:pointer}.ag-cur i{font-style:normal;font-size:var(--fs-xs);opacity:.6}
+@media (max-width:560px){.ag-stage-pop{right:-44px;width:min(320px,calc(100vw - 24px))}}
+.plan-prompt{margin-top:8px;font-size:var(--fs-s);color:var(--ink2)}.plan-prompt summary{cursor:pointer;color:var(--aid)}.plan-prompt p{margin:6px 0 0;white-space:pre-wrap}
+@media (prefers-reduced-motion:reduce){.ag-stage-pop{animation:none}}
+
+/* ---------- the chat restyle (redesign phase 10): ONE override block, last.
+   White cards with a hairline and accent blue for the one main action; the screen's gradient background, glow and dot grid and the gradient greeting stay
+.
+   The AI-vision chip keeps its rolling highlight (.ai-vis): it is the one place that asks for the person's attention on purpose. */
+.ai-pill{background:var(--sf);border-color:var(--bd);backdrop-filter:none}
+.ai-box{background:var(--sf);backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:0 0 0 1px var(--bd),0 8px 24px #0f172a0f}
+.ai-box:focus-within{box-shadow:0 0 0 1px var(--pri),0 0 0 4px var(--pri-glow)}
+.ai-send{background:var(--pri);box-shadow:0 4px 12px var(--pri-glow)}.ai-send:hover:not(:disabled){background:var(--pri-d)}
+.ag-chip{background:var(--sf);backdrop-filter:none;border-color:var(--bd)}.ag-chip:hover{border-color:var(--pri-bd);color:var(--pri-d)}
+.ai-chip{background:var(--sf);backdrop-filter:none;border-color:var(--bd)}
+.ai-chip.pri,.ai-chip.pri:hover{background:var(--pri);box-shadow:0 4px 12px var(--pri-glow)}.ai-chip.pri:hover{background:var(--pri-d)}
+.ai-m.user .b{background:var(--pri-l);border-color:transparent}
+.ai-av{background:var(--pri)}
+.ai-card{background:var(--sf);backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:0 0 0 1px var(--bd)}
+.plan-foot .go{background:var(--pri);box-shadow:0 4px 12px var(--pri-glow)}.plan-foot .go:hover{background:var(--pri-d)}
+.ai-set{background:var(--sf);backdrop-filter:none;box-shadow:0 18px 50px #0f172a24,0 0 0 1px var(--bd)}
+.sess-new{background:var(--pri-l);color:var(--pri-d)}
+.ag-st.on{box-shadow:inset 0 0 0 2px var(--pri)}
+.ag-stage-pop{box-shadow:0 18px 50px #0f172a24,0 0 0 1px var(--bd)}
+.ai-gen-ref{padding-bottom:4px}.ai-gen-ref small{white-space:normal}
+
+.ag-engine{position:relative;display:inline-flex}
+.ai-set.ai-engine-pop{left:auto;right:0;top:calc(100% + 10px);bottom:auto;width:min(340px,calc(100vw - 80px));z-index:20}
+
+/* Shared redesign roles, scoped to the Chat surface. */
+#s-agent .ai-top{gap:var(--space-1);padding:var(--space-2) var(--space-3)}
+#s-agent .ai-scroll{padding:var(--space-2) var(--space-3)}
+#s-agent .ai-card,#s-agent .ai-set{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);box-shadow:var(--elevation-card);backdrop-filter:none}
+#s-agent .ai-card{padding:var(--space-2)}
+#s-agent .ai-dock-in{gap:var(--space-1);padding:var(--space-2);border-radius:var(--r-l)}
+#s-agent button,#s-agent summary{min-height:var(--control-min);min-width:var(--control-min)}
+#s-agent .ai-seg{flex-wrap:wrap;gap:var(--space-half)}
+@media(max-width:760px){#s-agent .ai-top,#s-agent .ai-scroll{padding-inline:var(--space-2)}#s-agent .ai-dock-in{padding:var(--space-1)}#s-agent .ai-card{max-width:100%;min-width:0}}
+.ag-config-toggle{display:none}
+@media(max-width:760px){
+ #s-agent .ai-top{flex-wrap:wrap}
+ #s-agent .ai-top .ttl{flex:1 0 100%;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+ #s-agent .ai-top .ttl:empty{display:none}
+ #s-agent .ai-top .sp{display:none}
+ #s-agent .ag-engine{flex:1;min-width:0}
+ #s-agent .ai-pill{max-width:100%}
+ #s-agent .ai-pill span{white-space:normal;overflow-wrap:anywhere}
+ #s-agent .ag-config-toggle{display:inline-flex;margin-top:var(--space-1)}
+ #s-agent .ag-config:not(.open) .ag-config-body{display:none}
+ #s-agent .ag-config-body{max-height:30vh;overflow:auto}
+}

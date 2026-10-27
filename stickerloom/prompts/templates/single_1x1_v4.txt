@@ -1,0 +1,7 @@
+A single face and head alone, large and centred on a square canvas.
+Subject: {subject_description}.
+Style: {style}.
+Outline: none. Draw directly on the background with no outline, border, stroke, die-cut edge or halo around it.
+Expression, big and readable at small size: {cells} — the face and head alone, never a body, arms, hands, legs, feet, ears, tails or props.
+Background: one single flat pure {key_name} ({key_hex}) colour over the entire image, one identical shade everywhere; no tint, gradient, vignette or glow, no shadows, no floor, no noise.
+Margin: the face and head alone, large and centred, with a generous empty margin on every side (at least 20% of the canvas), nothing touching or crossing the edge.

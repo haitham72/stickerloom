@@ -1,0 +1,14 @@
+video sheet: A1
+video model: fake_video {'aspect_ratio': '1:1', 'duration': '3'}
+18:20:28 [stickerloom] J002 generating video (fake_video) for G001
+video job: J002
+18:20:29 [stickerloom] J002 received video (fake_video, 0.0 credits, 1 s) for G001
+fulfilled: DONE jobs/J002-cheerful_round_cartoon_mushr-video/result.mp4
+video bytes: 769638
+18:20:45 [stickerloom] G001 animations cut: 4 ready
+sliced
+sticker 1: still=READY anim=READY png=slices/img-cheerful_round_cartoon_mushr-laughing-20261026T142013-e52b96.png webm=slices/vid-cheerful_round_cartoon_mushr-laughing-20261026T142013-e52b96.webm
+sticker 2: still=READY anim=READY png=slices/img-cheerful_round_cartoon_mushr-crying-20261026T142013-1eddd8.png webm=slices/vid-cheerful_round_cartoon_mushr-crying-20261026T142013-1eddd8.webm
+sticker 3: still=READY anim=READY png=slices/img-cheerful_round_cartoon_mushr-facepalm-20261026T142013-9edec5.png webm=slices/vid-cheerful_round_cartoon_mushr-facepalm-20261026T142013-9edec5.webm
+sticker 4: still=READY anim=READY png=slices/img-cheerful_round_cartoon_mushr-scared-20261026T142013-f9c587.png webm=slices/vid-cheerful_round_cartoon_mushr-scared-20261026T142013-f9c587.webm
+VIDEO STEP OK

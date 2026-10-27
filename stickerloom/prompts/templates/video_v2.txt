@@ -1,0 +1,8 @@
+Animate this illustration sheet as a {seconds}-second {clip}. Every character performs its own big, highly expressive, cartoon-style animation in place, inside its own cell, showing a wide range of emotions:
+{motions}
+Animation style: wide emotions, highly expressive faces and bodies, exaggerated squash and stretch, anticipation and follow-through, clear facial animation (eyes, eyebrows, mouth), secondary motion on ears, tails and props, each character on its own rhythm, lively and full of personality. Never a static pose and never only a gentle sway.
+Keep every character inside its own slot of the {rows}x{cols} layout; nothing may touch or cross a slot edge, and characters never interact with one another.
+Empty slots stay empty: do not add any character, object or effect to them.
+Static camera, no zoom, no pan, no cuts. Keep the one flat pure {key_name} ({key_hex}) background exactly as it is, the same shade everywhere: no shadows, no gradient, no noise, no glow.
+Keep each character's design, proportions and colours unchanged and do not add outlines or borders.
+{ending}

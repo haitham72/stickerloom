@@ -1,0 +1,5 @@
+Animate this sticker sheet as a {seconds}-second seamless loop: {motion}.
+Keep every character inside its own slot of the {rows}x{cols} layout; nothing may touch or cross a slot edge, and characters never interact with one another.
+Empty slots stay empty: do not add any character, object or effect to them.
+Static camera, no zoom, no pan, no cuts. Keep the flat pure {key_name} ({key_hex}) background exactly as it is: no shadows, no gradient, no noise.
+Keep each character's design, proportions and colours unchanged and do not add outlines or borders.

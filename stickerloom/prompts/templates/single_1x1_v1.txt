@@ -1,0 +1,6 @@
+Single sticker, one character centred on a square canvas.
+Subject: {subject_description}.
+Style: {style}.
+Pose: {cells}
+Background: flat pure {key_name} ({key_hex}) background, no shadows, no floor, no gradients, no noise.
+Margin: full body, centred, with a generous empty margin on every side (at least 20% of the canvas), nothing touching or crossing the edge.

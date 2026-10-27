@@ -1,0 +1,11 @@
+title = "stickerloom gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Obviously fake Telegram tokens used by the offline test fixtures"
+regexes = [
+  '''123456789:AAFakeTokenForTestsOnly_[0-9A-Za-z]+''',
+  '''999999999:AAWrongToken[0-9A-Za-z_-]*''',
+]

@@ -1,0 +1,54 @@
+# Secrets: never commit tokens (the Telegram bot token lives in env or out/telegram.json)
+.env
+.env.*
+!.env.example
+**/telegram.json
+.tgcred
+telegram-id.md
+opencode.json
+out/.asset_secret
+out/auth_sessions.json
+*.pem
+*.key
+
+# Generated data: a run writes everything under out/ (STICKERLOOM_OUT)
+out/
+output/
+generated/
+inputs/*
+!inputs/.gitkeep
+
+# Cutout models: isnet-general-use is ~170 MB, fetched on demand (stickerloom models fetch).
+# u2netp (4.5 MB) ships as the fallback.
+stickerloom/models/*.onnx
+!stickerloom/models/u2netp.onnx
+models/isnet-*.onnx
+*.npz
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.test-results/
+
+# Node / browser tooling
+node_modules/
+.playwright-*/
+.playwright-cli/
+.playwright-mcp/
+
+# OS / editor
+.DS_Store
+**/.DS_Store
+.vscode/
+.idea/
+.claude/
+
+# raw UI captures (never committed)
+assets/_raw/

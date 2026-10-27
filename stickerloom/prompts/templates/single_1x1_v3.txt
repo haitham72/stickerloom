@@ -1,0 +1,7 @@
+A single character, centred on a square canvas.
+Subject: {subject_description}.
+Style: {style}.
+Outline: none. Draw the character directly on the background with no outline, border, stroke, die-cut edge or halo around it.
+Expression and state of action (a wide range of emotions, a clear body position), big and readable at small size: {cells}
+Background: one single flat pure {key_name} ({key_hex}) colour over the entire image, one identical shade everywhere; no tint, gradient, vignette or glow, no shadows, no floor, no noise.
+Margin: full body, centred, with a generous empty margin on every side (at least 20% of the canvas), nothing touching or crossing the edge.
